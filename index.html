@@ -432,9 +432,7 @@
           jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。  
 jsonp原理利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 
 第三方产生的响应为json数据的包装（故称之为jsonp，即json padding）。  
-它的基本思想是，网页通过添加一个script元素，向服务器请求JSON数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。  
-首先，网页动态插入script元素，由它向跨源网址发出请求。  
-1234567891011121314function addScriptTag(src) &#123;  var sc
+它的基本思想是，网页通过添加一个script元素，向服
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -620,11 +618,7 @@ this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本
 
 正文this是Javascript语言的一个关键字。
 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如，
-12345　　function test()&#123;　　　　this.x = 1;　　&#125;
-随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，==调用函数的那个对象。==
-
-下面分四种情况，详细讨论this的用法。  
-情况一：纯粹的函数调用这是函数的
+12
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -740,7 +734,7 @@ this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
