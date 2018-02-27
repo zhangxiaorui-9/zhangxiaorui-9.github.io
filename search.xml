@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[jsonp解决跨域问题]]></title>
+    <url>%2F2018%2F02%2F27%2Fjsonp%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。 jsonp原理利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 第三方产生的响应为json数据的包装（故称之为jsonp，即json padding）。 它的基本思想是，网页通过添加一个script元素，向服务器请求JSON数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。 首先，网页动态插入script元素，由它向跨源网址发出请求。 1234567891011121314function addScriptTag(src) &#123; var script = document.createElement(&apos;script&apos;); script.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;); script.src = src; document.body.appendChild(script);&#125;window.onload = function () &#123; addScriptTag(&apos;http://example.com/ip?callback=foo&apos;);&#125;function foo(data) &#123; console.log(&apos;Your public IP address is: &apos; + data.ip);&#125;; 上面代码通过动态添加script元素，向服务器example.com发出请求。注意，该请求的查询字符串有一个callback参数，用来指定回调函数的名字，这对于JSONP是必需的。服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。123foo(&#123; &quot;ip&quot;: &quot;8.8.8.8&quot;&#125;); 由于script元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了foo函数，该函数就会立即调用。作为参数的JSON数据被视为JavaScript对象，而不是字符串，因此避免了使用JSON.parse的步骤。 面试中的问题 知道 jsonp么？答：知道，可以实现跨域请求；答不知道：换别的话题。 为什么 ajax 不可以，但是 jsonp 可以实现跨域请求呢？答：因为 jsonp 是通过插入一个 script 标签，利用 script 可以跨域请求来实现的。换问题3；答：面试官傻逼，ajax 现在也可以使用 cors 来做跨域请求；换问题 2.5。答不知道：换问题 2.5。2.5 jsonp实现原理？答：通过创建一个 script 标签，将 src 设置为目标请求，插入到 dom 中，服务器接受该请求并返回数据，数据通常被包裹在回调钩子中；回答不知道：我自己解释 jsonp 的实现。 可以用 jsonp 发送 post 请求么？答：显然不行，看过支持 post 请求的 script 么？答不知道：反问，看过支持 post 请求的 script 么？ 参考 jsonp，还有那些发送跨域请求的途径？答：img link iframe 等元素都可以发送跨域请求呀！答不知道：反问img link iframe 等元素是不是也可以？ 参考资料浏览器同源政策及其规避方法jsonp为什么不支持post请求，寸志的回答]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>跨域</tag>
+        <tag>jsonp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javaScript中this的用法]]></title>
     <url>%2F2018%2F01%2F22%2Fthis%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接 正文this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如， 12345 function test()&#123; this.x = 1; &#125; 随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，==调用函数的那个对象。== 下面分四种情况，详细讨论this的用法。 情况一：纯粹的函数调用这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。 请看下面这段代码，它的运行结果是1。123456789 function test()&#123; this.x = 1; alert(this.x); &#125; test(); // 1 为了证明this就是全局对象，我对代码做一些改变：123456789 var x = 1; function test()&#123; alert(this.x); &#125; test(); // 1 运行结果还是1。再变一下： 1234567891011 var x = 1; function test()&#123; this.x = 0; &#125; test(); alert(x); //0 情况二：作为对象方法的调用函数还可以作为某个对象的方法调用，这时this就指这个上级对象。 12345678910111213 function test()&#123; alert(this.x); &#125; var o = &#123;&#125;; o.x = 1; o.m = test; o.m(); // 1 情况三 ：作为构造函数调用所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。123456789 function test()&#123; this.x = 1; &#125; var o = new test(); alert(o.x); // 1 运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：1234567891011 var x = 2; function test()&#123; this.x = 1; &#125; var o = new test(); alert(x); //2 运行结果为2，表明全局变量x的值根本没变。 情况四： apply调用apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。 123456789101112131415 var x = 0; function test()&#123; alert(this.x); &#125; var o=&#123;&#125;; o.x = 1; o.m = test; o.m.apply(); //0 apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。 如果把最后一行代码修改为 : 1 o.m.apply(o); //1 运行结果就变成了1，证明了这时this代表的是对象o。]]></content>

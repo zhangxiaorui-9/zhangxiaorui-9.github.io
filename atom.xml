@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kursaal.vip/"/>
-  <updated>2018-01-24T08:26:33.023Z</updated>
+  <updated>2018-02-27T06:38:04.295Z</updated>
   <id>http://kursaal.vip/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jsonp解决跨域问题</title>
+    <link href="http://kursaal.vip/2018/02/27/jsonp%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://kursaal.vip/2018/02/27/jsonp解决跨域问题/</id>
+    <published>2018-02-27T02:32:07.000Z</published>
+    <updated>2018-02-27T06:38:04.295Z</updated>
+    
+    <content type="html"><![CDATA[<p>jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。  </p><h4 id="jsonp原理"><a href="#jsonp原理" class="headerlink" title="jsonp原理"></a>jsonp原理</h4><p>利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 </p><p>第三方产生的响应为json数据的包装（故称之为jsonp，即json padding）。  </p><p>它的基本思想是，网页通过添加一个script元素，向服务器请求JSON数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。  </p><p>首先，网页动态插入script元素，由它向跨源网址发出请求。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function addScriptTag(src) &#123;</span><br><span class="line">  var script = document.createElement(&apos;script&apos;);</span><br><span class="line">  script.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);</span><br><span class="line">  script.src = src;</span><br><span class="line">  document.body.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.onload = function () &#123;</span><br><span class="line">  addScriptTag(&apos;http://example.com/ip?callback=foo&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function foo(data) &#123;</span><br><span class="line">  console.log(&apos;Your public IP address is: &apos; + data.ip);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>上面代码通过动态添加script元素，向服务器example.com发出请求。注意，该请求的查询字符串有一个callback参数，用来指定回调函数的名字，这对于JSONP是必需的。<br>服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">foo(&#123;</span><br><span class="line">  &quot;ip&quot;: &quot;8.8.8.8&quot;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>由于script元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了foo函数，该函数就会立即调用。作为参数的JSON数据被视为JavaScript对象，而不是字符串，因此避免了使用JSON.parse的步骤。</p><h4 id="面试中的问题"><a href="#面试中的问题" class="headerlink" title="面试中的问题"></a>面试中的问题</h4><ol><li>知道 jsonp么？<br>答：知道，可以实现跨域请求；<br>答不知道：换别的话题。</li><li>为什么 ajax 不可以，但是 jsonp 可以实现跨域请求呢？<br>答：因为 jsonp 是通过插入一个 script 标签，利用 script 可以跨域请求来实现的。换问题3；<br>答：面试官傻逼，ajax 现在也可以使用 cors 来做跨域请求；换问题 2.5。<br>答不知道：换问题 2.5。<br>2.5  jsonp实现原理？<br>答：通过创建一个 script 标签，将 src 设置为目标请求，插入到 dom 中，服务器接受该请求并返回数据，数据通常被包裹在回调钩子中；<br>回答不知道：我自己解释 jsonp 的实现。  </li><li>可以用 jsonp 发送 post 请求么？<br>答：显然不行，看过支持 post 请求的 script 么？<br>答不知道：反问，看过支持 post 请求的 script 么？  </li><li>参考 jsonp，还有那些发送跨域请求的途径？<br>答：img link iframe 等元素都可以发送跨域请求呀！<br>答不知道：反问img link iframe 等元素是不是也可以？</li></ol><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">浏览器同源政策及其规避方法</a><br><a href="https://www.zhihu.com/question/28890257/answer/269738446" target="_blank" rel="noopener">jsonp为什么不支持post请求，寸志的回答</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。  &lt;/p&gt;
+&lt;h4 id=&quot;jsonp原理&quot;&gt;&lt;a href=&quot;#jsonp原理&quot; class=&quot;headerlink&quot; title=&quot;jsonp原理&quot;&gt;&lt;/a&gt;jsonp原理&lt;/h4&gt;&lt;p&gt;利用script标签没
+      
+    
+    </summary>
+    
+      <category term="javaScript" scheme="http://kursaal.vip/categories/javaScript/"/>
+    
+    
+      <category term="跨域" scheme="http://kursaal.vip/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+      <category term="jsonp" scheme="http://kursaal.vip/tags/jsonp/"/>
+    
+  </entry>
   
   <entry>
     <title>javaScript中this的用法</title>
