@@ -27,13 +27,25 @@
   <entry>
     <title><![CDATA[not defined、undefined和null的区别]]></title>
     <url>%2F2017%2F12%2F24%2Fnot-defined%E3%80%81undefined%E5%92%8Cnull%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[not defined意为没有定义的变量。例： 123&lt;script type=&quot;text/javascript&quot;&gt; console.log(m);&lt;/script&gt; 上述代码中m没有被定义，此时浏览器会报错 Uncaught ReferenceError: m is not defined undefinedundefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是： 变量被声明了，但没有赋值时，就等于undefined。 调用函数时，应该提供的参数没有提供，该参数等于undefined。 对象没有赋值的属性，该属性的值为undefined。 函数没有返回值时，默认返回undefined。 1234567891011var i;i // undefinedfunction f(x)&#123;console.log(x)&#125;f() // undefinedvar o = new Object();o.p // undefinedvar x = f();x // undefined 上面四种情况执行结果一样：不会报错，会打印出undefined。 nullnull表示”没有对象”，即该处不应该有值。典型用法是： 作为函数的参数，表示该函数的参数不是对象。 作为对象原型链的终点。 12Object.getPrototypeOf(Object.prototype)// null 需要注意这里需要注意的是：null == undefined结果是true的，null === undefined结果是false的。 参考资料阮一峰：undefined与null的区别]]></content>
+    <content type="text"><![CDATA[not defined意为没有定义的变量。例： 123&lt;script type=&quot;text/javascript&quot;&gt; console.log(m);&lt;/script&gt; 上述代码中m没有被定义，此时浏览器会报错 Uncaught ReferenceError: m is not defined undefinedundefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是： 变量被声明了，但没有赋值时，就等于undefined。 调用函数时，应该提供的参数没有提供，该参数等于undefined。 对象没有赋值的属性，该属性的值为undefined。 函数没有返回值时，默认返回undefined。 1234567891011var i;i // undefinedfunction f(x)&#123;console.log(x)&#125;f() // undefinedvar o = new Object();o.p // undefinedvar x = f();x // undefined 上面四种情况执行结果一样：不会报错，会打印出undefined。 nullnull表示 “没有对象”，即该处不应该有值。典型用法是： 作为函数的参数，表示该函数的参数不是对象。 作为对象原型链的终点。 12Object.getPrototypeOf(Object.prototype)// null 需要注意这里需要注意的是：null == undefined结果是true的，null === undefined结果是false的。 参考资料阮一峰：undefined与null的区别]]></content>
       <categories>
         <category>javaScript</category>
       </categories>
       <tags>
         <tag>undefined</tag>
         <tag>not defined</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于函数重载和arguments]]></title>
+    <url>%2F2017%2F11%2F08%2F%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E5%92%8Carguments%2F</url>
+    <content type="text"><![CDATA[重载的概念重载，简单说，就是函数或者方法有相同的名称，但是参数列表(包括参数个数和参数类型)不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。 js中的函数重载js中没有重载。就是说，js不允许有名字相同的函数，如果你声明了两个名字相同的函数，后一个就会覆盖掉前一个。在js中，函数是作为一种特殊对象类型存在的，函数的名字只是一个普通的变量，本质与var a = 1中的变量a没什么区别。所以如果你先后定义了两个同名函数，实际上相当于先后将两个函数对象绑定到了同一个变量上，所以后者必然覆盖前者，不会共存，也自然不存在重载了。 js中的arguments总所周知，js是一门相当灵活的语言。当我们在js中在调用一个函数的时候，我们经常会给这个函数传递一些参数，js把传入到这个函数的全部参数存储在一个叫做arguments的东西里面，那么这到底是什么东西？在js中万物皆对象，甚至数组字符串函数都是对象。所以这个叫做arguments的东西也是个对象，而且是一个特殊的对象，它的属性名是按照传入参数的序列来的，第1个参数的属性名是’0’，第2个参数的属性名是’1’，以此类推，并且它还有length属性，存储的是当前传入函数参数的个数，很多时候我们把这种对象叫做类数组对象。关于类数组，此处不做详细讲解。接下来我们来看看arguments对象里面到底有些什么东西，是骡子是马拉出来溜溜。 12345function showargs() &#123; console.log( arguments );&#125;showargs(1,2,3,4,5); 打印结果： 这里我们可以看到arguments对象将我传入的五个参数以数组的形式保存在里面，还保存了我传入函数的实参的个数（length）。而且我们可以看到arguments对象的 proto 是指向object的，这也说明了他是个类数组对象，而不是一个数组。有了这个对象我们以后写函数的时候，就不用给所有的形参指定参数名，然后通过参数名的方式获取参数了，我们可以直接使用arguments对象来获取实参，这样是不是方便了很多呢。有些语言在我们给函数指定了参数名之后，当调用函数时，会判断当前传入的参数是否与函数定义的参数个数相等，不相等就会报错。但是灵活的js并不会验证传递给函数的参数个数是否等于函数定义的参数个数。所以代码的简洁度（为了装逼），我们使用arguments调用参数可以不混淆不同函数之间的参数名。另外代码的严整度（为了装逼），我们也能用arguments来判断当前传入参数的个数是否与我们需要的数量一致。下面举个栗子：12345678910function add() &#123; if( arguments.length == 2 )&#123; return arguments[0] + arguments[1]; &#125;else&#123; return &apos;传入参数不合法&apos;; &#125;&#125;console.log( add(2,3) );console.log( add(1,2,3) ); 看看结果：最后我们还可以看到arguments还有一个叫做callee的属性，这个属性是表示的是当前函数的一个引用。简单点说，这个属性里面存储的是我们调用的这个函数的代码，实在无法理解的时候，又到了console.log大显身手的时候了。12345678function showcallee() &#123; var a = &apos;这里是代码&apos;; var b = &apos;这是另一段代码&apos;; var c = a + b; console.log(arguments.callee); return c;&#125;showcallee(); 看看结果：看到结果的你是不是和我一样惊呆了呢，这不就是我写的代码吗？arguments.callee完完整整的把这个函数的这段代码返回了。 arguments和函数重载的关系上面说过了，由于js是一种弱类型的语言，没有重载机制，当我们重写函数时，会将原来的函数直接覆盖，这里我们能利用arguments，来判断传入的实参类型与数量进行不同的操作，然后返回不同的结果，来实现js中的函数重载。举个栗子：下面我们利用arguments对象来实现一个参数相加的函数，不论传入多少参数都行，将传入的参数相加后返回。 function add() { var len = arguments.length, sum = 0; for(;len--;){ sum += arguments[len]; } return sum; } console.log( add(1,2,3) ); //6 console.log( add(1,3) ); //4 console.log( add(1,2,3,5,6,2,7) ); //26 参考资料js的arguments到底是什么？]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>arguments</tag>
+        <tag>函数重载</tag>
       </tags>
   </entry>
 </search>
