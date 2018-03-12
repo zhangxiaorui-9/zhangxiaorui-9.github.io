@@ -14,7 +14,7 @@
   </entry>
   <entry>
     <title><![CDATA[jsonp解决跨域问题]]></title>
-    <url>%2F2018%2F02%2F27%2Fjsonp%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%2F</url>
+    <url>%2F2017%2F08%2F13%2Fjsonp%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。 jsonp原理利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 第三方产生的响应为json数据的包装（故称之为jsonp，即json padding）。 它的基本思想是，网页通过添加一个script元素，向服务器请求JSON数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。 首先，网页动态插入script元素，由它向跨源网址发出请求。 1234567891011121314function addScriptTag(src) &#123; var script = document.createElement(&apos;script&apos;); script.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;); script.src = src; document.body.appendChild(script);&#125;window.onload = function () &#123; addScriptTag(&apos;http://example.com/ip?callback=foo&apos;);&#125;function foo(data) &#123; console.log(&apos;Your public IP address is: &apos; + data.ip);&#125;; 上面代码通过动态添加script元素，向服务器example.com发出请求。注意，该请求的查询字符串有一个callback参数，用来指定回调函数的名字，这对于JSONP是必需的。服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。123foo(&#123; &quot;ip&quot;: &quot;8.8.8.8&quot;&#125;); 由于script元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了foo函数，该函数就会立即调用。作为参数的JSON数据被视为JavaScript对象，而不是字符串，因此避免了使用JSON.parse的步骤。 面试中的问题 知道 jsonp么？答：知道，可以实现跨域请求；答不知道：换别的话题。 为什么 ajax 不可以，但是 jsonp 可以实现跨域请求呢？答：因为 jsonp 是通过插入一个 script 标签，利用 script 可以跨域请求来实现的。换问题3；答：面试官傻逼，ajax 现在也可以使用 cors 来做跨域请求；换问题 2.5。答不知道：换问题 2.5。2.5 jsonp实现原理？答：通过创建一个 script 标签，将 src 设置为目标请求，插入到 dom 中，服务器接受该请求并返回数据，数据通常被包裹在回调钩子中；回答不知道：我自己解释 jsonp 的实现。 可以用 jsonp 发送 post 请求么？答：显然不行，看过支持 post 请求的 script 么？答不知道：反问，看过支持 post 请求的 script 么？ 参考 jsonp，还有那些发送跨域请求的途径？答：img link iframe 等元素都可以发送跨域请求呀！答不知道：反问img link iframe 等元素是不是也可以？ 参考资料浏览器同源政策及其规避方法jsonp为什么不支持post请求，寸志的回答]]></content>
       <categories>
         <category>javaScript</category>
@@ -25,8 +25,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[关于函数重载和arguments]]></title>
+    <url>%2F2017%2F03%2F24%2F%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E5%92%8Carguments%2F</url>
+    <content type="text"><![CDATA[重载的概念重载，简单说，就是函数或者方法有相同的名称，但是参数列表(包括参数个数和参数类型)不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。 js中的函数重载js中没有重载。就是说，js不允许有名字相同的函数，如果你声明了两个名字相同的函数，后一个就会覆盖掉前一个。在js中，函数是作为一种特殊对象类型存在的，函数的名字只是一个普通的变量，本质与var a = 1中的变量a没什么区别。所以如果你先后定义了两个同名函数，实际上相当于先后将两个函数对象绑定到了同一个变量上，所以后者必然覆盖前者，不会共存，也自然不存在重载了。 js中的arguments总所周知，js是一门相当灵活的语言。当我们在js中在调用一个函数的时候，我们经常会给这个函数传递一些参数，js把传入到这个函数的全部参数存储在一个叫做arguments的东西里面，那么这到底是什么东西？在js中万物皆对象，甚至数组字符串函数都是对象。所以这个叫做arguments的东西也是个对象，而且是一个特殊的对象，它的属性名是按照传入参数的序列来的，第1个参数的属性名是’0’，第2个参数的属性名是’1’，以此类推，并且它还有length属性，存储的是当前传入函数参数的个数，很多时候我们把这种对象叫做类数组对象。关于类数组，此处不做详细讲解。接下来我们来看看arguments对象里面到底有些什么东西，是骡子是马拉出来溜溜。 12345function showargs() &#123; console.log( arguments );&#125;showargs(1,2,3,4,5); 打印结果： 这里我们可以看到arguments对象将我传入的五个参数以数组的形式保存在里面，还保存了我传入函数的实参的个数（length）。而且我们可以看到arguments对象的 proto 是指向object的，这也说明了他是个类数组对象，而不是一个数组。有了这个对象我们以后写函数的时候，就不用给所有的形参指定参数名，然后通过参数名的方式获取参数了，我们可以直接使用arguments对象来获取实参，这样是不是方便了很多呢。有些语言在我们给函数指定了参数名之后，当调用函数时，会判断当前传入的参数是否与函数定义的参数个数相等，不相等就会报错。但是灵活的js并不会验证传递给函数的参数个数是否等于函数定义的参数个数。所以代码的简洁度（为了装逼），我们使用arguments调用参数可以不混淆不同函数之间的参数名。另外代码的严整度（为了装逼），我们也能用arguments来判断当前传入参数的个数是否与我们需要的数量一致。下面举个栗子：12345678910function add() &#123; if( arguments.length == 2 )&#123; return arguments[0] + arguments[1]; &#125;else&#123; return &apos;传入参数不合法&apos;; &#125;&#125;console.log( add(2,3) );console.log( add(1,2,3) ); 看看结果：最后我们还可以看到arguments还有一个叫做callee的属性，这个属性是表示的是当前函数的一个引用。简单点说，这个属性里面存储的是我们调用的这个函数的代码，实在无法理解的时候，又到了console.log大显身手的时候了。12345678function showcallee() &#123; var a = &apos;这里是代码&apos;; var b = &apos;这是另一段代码&apos;; var c = a + b; console.log(arguments.callee); return c;&#125;showcallee(); 看看结果：看到结果的你是不是和我一样惊呆了呢，这不就是我写的代码吗？arguments.callee完完整整的把这个函数的这段代码返回了。 arguments和函数重载的关系上面说过了，由于js是一种弱类型的语言，没有重载机制，当我们重写函数时，会将原来的函数直接覆盖，这里我们能利用arguments，来判断传入的实参类型与数量进行不同的操作，然后返回不同的结果，来实现js中的函数重载。举个栗子：下面我们利用arguments对象来实现一个参数相加的函数，不论传入多少参数都行，将传入的参数相加后返回。 function add() { var len = arguments.length, sum = 0; for(;len--;){ sum += arguments[len]; } return sum; } console.log( add(1,2,3) ); //6 console.log( add(1,3) ); //4 console.log( add(1,2,3,5,6,2,7) ); //26 参考资料js的arguments到底是什么？]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>arguments</tag>
+        <tag>函数重载</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[javaScript中this的用法]]></title>
-    <url>%2F2018%2F01%2F22%2Fthis%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
+    <url>%2F2017%2F03%2F11%2Fthis%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接 正文this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如， 12345 function test()&#123; this.x = 1; &#125; 随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，==调用函数的那个对象。== 下面分四种情况，详细讨论this的用法。 情况一：纯粹的函数调用这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。 请看下面这段代码，它的运行结果是1。123456789 function test()&#123; this.x = 1; alert(this.x); &#125; test(); // 1 为了证明this就是全局对象，我对代码做一些改变：123456789 var x = 1; function test()&#123; alert(this.x); &#125; test(); // 1 运行结果还是1。再变一下： 1234567891011 var x = 1; function test()&#123; this.x = 0; &#125; test(); alert(x); //0 情况二：作为对象方法的调用函数还可以作为某个对象的方法调用，这时this就指这个上级对象。 12345678910111213 function test()&#123; alert(this.x); &#125; var o = &#123;&#125;; o.x = 1; o.m = test; o.m(); // 1 情况三 ：作为构造函数调用所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。123456789 function test()&#123; this.x = 1; &#125; var o = new test(); alert(o.x); // 1 运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：1234567891011 var x = 2; function test()&#123; this.x = 1; &#125; var o = new test(); alert(x); //2 运行结果为2，表明全局变量x的值根本没变。 情况四： apply调用apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。 123456789101112131415 var x = 0; function test()&#123; alert(this.x); &#125; var o=&#123;&#125;; o.x = 1; o.m = test; o.m.apply(); //0 apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。 如果把最后一行代码修改为 : 1 o.m.apply(o); //1 运行结果就变成了1，证明了这时this代表的是对象o。]]></content>
       <categories>
         <category>javaScript</category>
@@ -38,7 +50,7 @@
   </entry>
   <entry>
     <title><![CDATA[not defined、undefined和null的区别]]></title>
-    <url>%2F2017%2F12%2F24%2Fnot-defined%E3%80%81undefined%E5%92%8Cnull%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <url>%2F2017%2F02%2F24%2Fnot-defined%E3%80%81undefined%E5%92%8Cnull%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[not defined意为没有定义的变量。例： 123&lt;script type=&quot;text/javascript&quot;&gt; console.log(m);&lt;/script&gt; 上述代码中m没有被定义，此时浏览器会报错 Uncaught ReferenceError: m is not defined undefinedundefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是： 变量被声明了，但没有赋值时，就等于undefined。 调用函数时，应该提供的参数没有提供，该参数等于undefined。 对象没有赋值的属性，该属性的值为undefined。 函数没有返回值时，默认返回undefined。 1234567891011var i;i // undefinedfunction f(x)&#123;console.log(x)&#125;f() // undefinedvar o = new Object();o.p // undefinedvar x = f();x // undefined 上面四种情况执行结果一样：不会报错，会打印出undefined。 nullnull表示 “没有对象”，即该处不应该有值。典型用法是： 作为函数的参数，表示该函数的参数不是对象。 作为对象原型链的终点。 12Object.getPrototypeOf(Object.prototype)// null 需要注意这里需要注意的是：null == undefined结果是true的，null === undefined结果是false的。 参考资料阮一峰：undefined与null的区别]]></content>
       <categories>
         <category>javaScript</category>
@@ -46,18 +58,6 @@
       <tags>
         <tag>undefined</tag>
         <tag>not defined</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[关于函数重载和arguments]]></title>
-    <url>%2F2017%2F11%2F08%2F%E5%85%B3%E4%BA%8E%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E5%92%8Carguments%2F</url>
-    <content type="text"><![CDATA[重载的概念重载，简单说，就是函数或者方法有相同的名称，但是参数列表(包括参数个数和参数类型)不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。 js中的函数重载js中没有重载。就是说，js不允许有名字相同的函数，如果你声明了两个名字相同的函数，后一个就会覆盖掉前一个。在js中，函数是作为一种特殊对象类型存在的，函数的名字只是一个普通的变量，本质与var a = 1中的变量a没什么区别。所以如果你先后定义了两个同名函数，实际上相当于先后将两个函数对象绑定到了同一个变量上，所以后者必然覆盖前者，不会共存，也自然不存在重载了。 js中的arguments总所周知，js是一门相当灵活的语言。当我们在js中在调用一个函数的时候，我们经常会给这个函数传递一些参数，js把传入到这个函数的全部参数存储在一个叫做arguments的东西里面，那么这到底是什么东西？在js中万物皆对象，甚至数组字符串函数都是对象。所以这个叫做arguments的东西也是个对象，而且是一个特殊的对象，它的属性名是按照传入参数的序列来的，第1个参数的属性名是’0’，第2个参数的属性名是’1’，以此类推，并且它还有length属性，存储的是当前传入函数参数的个数，很多时候我们把这种对象叫做类数组对象。关于类数组，此处不做详细讲解。接下来我们来看看arguments对象里面到底有些什么东西，是骡子是马拉出来溜溜。 12345function showargs() &#123; console.log( arguments );&#125;showargs(1,2,3,4,5); 打印结果： 这里我们可以看到arguments对象将我传入的五个参数以数组的形式保存在里面，还保存了我传入函数的实参的个数（length）。而且我们可以看到arguments对象的 proto 是指向object的，这也说明了他是个类数组对象，而不是一个数组。有了这个对象我们以后写函数的时候，就不用给所有的形参指定参数名，然后通过参数名的方式获取参数了，我们可以直接使用arguments对象来获取实参，这样是不是方便了很多呢。有些语言在我们给函数指定了参数名之后，当调用函数时，会判断当前传入的参数是否与函数定义的参数个数相等，不相等就会报错。但是灵活的js并不会验证传递给函数的参数个数是否等于函数定义的参数个数。所以代码的简洁度（为了装逼），我们使用arguments调用参数可以不混淆不同函数之间的参数名。另外代码的严整度（为了装逼），我们也能用arguments来判断当前传入参数的个数是否与我们需要的数量一致。下面举个栗子：12345678910function add() &#123; if( arguments.length == 2 )&#123; return arguments[0] + arguments[1]; &#125;else&#123; return &apos;传入参数不合法&apos;; &#125;&#125;console.log( add(2,3) );console.log( add(1,2,3) ); 看看结果：最后我们还可以看到arguments还有一个叫做callee的属性，这个属性是表示的是当前函数的一个引用。简单点说，这个属性里面存储的是我们调用的这个函数的代码，实在无法理解的时候，又到了console.log大显身手的时候了。12345678function showcallee() &#123; var a = &apos;这里是代码&apos;; var b = &apos;这是另一段代码&apos;; var c = a + b; console.log(arguments.callee); return c;&#125;showcallee(); 看看结果：看到结果的你是不是和我一样惊呆了呢，这不就是我写的代码吗？arguments.callee完完整整的把这个函数的这段代码返回了。 arguments和函数重载的关系上面说过了，由于js是一种弱类型的语言，没有重载机制，当我们重写函数时，会将原来的函数直接覆盖，这里我们能利用arguments，来判断传入的实参类型与数量进行不同的操作，然后返回不同的结果，来实现js中的函数重载。举个栗子：下面我们利用arguments对象来实现一个参数相加的函数，不论传入多少参数都行，将传入的参数相加后返回。 function add() { var len = arguments.length, sum = 0; for(;len--;){ sum += arguments[len]; } return sum; } console.log( add(1,2,3) ); //6 console.log( add(1,3) ); //4 console.log( add(1,2,3,5,6,2,7) ); //26 参考资料js的arguments到底是什么？]]></content>
-      <categories>
-        <category>javaScript</category>
-      </categories>
-      <tags>
-        <tag>arguments</tag>
-        <tag>函数重载</tag>
       </tags>
   </entry>
 </search>
