@@ -397,10 +397,7 @@
 
       
         
-          
-          为什么要使用计算属性（computed）我们都知道，在Vue中，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。看看代码:
-1234567&#123;&#123; number + 1 &#125;&#125;&#123;&#123; ok ? &apos;YES
-          ...
+          <h4 id="为什么要使用计算属性（computed）"><a href="#为什么要使用计算属性（computed）" class="headerlink" title="为什么要使用计算属性（computed）"></a>为什么要使用计算属性（computed）</h4><p>我们都知道，在Vue中，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。<br>看看代码:<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/12/关于Vue中的计算属性computed/#more" rel="contents">
@@ -408,6 +405,174 @@
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kursaal.vip/2018/02/23/v-if和v-show的使用和区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="About Mr">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不万能的杂货铺">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/v-if和v-show的使用和区别/" itemprop="url">v-if和v-show的使用和区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T21:25:33+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。  </p>
+</blockquote>
+<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><p>在字符串模板中，比如 Handlebars，我们得像这样写一个条件块：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Handlebars 模板 --&gt;</span><br><span class="line">&#123;&#123;#if ok&#125;&#125;</span><br><span class="line">  &lt;h1&gt;Yes&lt;/h1&gt;</span><br><span class="line">&#123;&#123;/if&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 Vue 中，我们使用 v-if 指令实现同样的功能：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-if=&quot;ok&quot;&gt;Yes&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>也可以用 v-else 添加一个“else 块”：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-if=&quot;ok&quot;&gt;Yes&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else&gt;No&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="在-template-元素上使用-v-if-条件渲染分组"><a href="#在-template-元素上使用-v-if-条件渲染分组" class="headerlink" title="在 template 元素上使用 v-if 条件渲染分组"></a>在 template 元素上使用 v-if 条件渲染分组</h3><p>因为 v-if是一个指令，所以必须将它添加到一个元素上。但是如果想切换多个元素呢？此时可以把一个 template 元素当做不可见的包裹元素，并在上面使用 v-if。最终的渲染结果将不包含 template 元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if=&quot;ok&quot;&gt;</span><br><span class="line">  &lt;h1&gt;Title&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;Paragraph 1&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;Paragraph 2&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-else"><a href="#v-else" class="headerlink" title="v-else"></a>v-else</h3><p>你可以使用 v-else 指令来表示 v-if 的“else 块”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=&quot;Math.random() &gt; 0.5&quot;&gt;</span><br><span class="line">  Now you see me</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;</span><br><span class="line">  Now you don&apos;t</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>v-else 元素<strong>必须紧跟</strong>在带 v-if 或者 v-else-if 的元素的后面，否则它将不会被识别。</p>
+<h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><p>v-else-if，顾名思义，充当 v-if 的“else-if 块”，可以连续使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=&quot;type === &apos;A&apos;&quot;&gt;</span><br><span class="line">  A</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &apos;B&apos;&quot;&gt;</span><br><span class="line">  B</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &apos;C&apos;&quot;&gt;</span><br><span class="line">  C</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;</span><br><span class="line">  Not A/B/C</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>类似于 v-else，v-else-if 也 <em>必须紧跟</em> 在带 v-if 或者 v-else-if 的元素之后!</p>
+<h3 id="用-key-管理可复用的元素"><a href="#用-key-管理可复用的元素" class="headerlink" title="用 key 管理可复用的元素"></a>用 key 管理可复用的元素</h3><p>Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做除了使Vue变得非常快之外，还有其它一些好处。例如，如果你允许用户在不同的登录方式之间切换：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if=&quot;loginType === &apos;username&apos;&quot;&gt;</span><br><span class="line">  &lt;label&gt;Username&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your username&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template v-else&gt;</span><br><span class="line">  &lt;label&gt;Email&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your email address&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>那么在上面的代码中切换 loginType <em>将不会清除</em>用户已经输入的内容。因为两个模板使用了相同的元素，input标签不会被替换掉——仅仅是替换了它的 placeholder。</p>
+<p>这样也不总是符合实际需求，所以 Vue 为你提供了一种方式来表达“这两个元素是完全独立的，不要复用它们”。只需添加一个具有唯一值的 <em>key</em> 属性即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if=&quot;loginType === &apos;username&apos;&quot;&gt;</span><br><span class="line">  &lt;label&gt;Username&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your username&quot; key=&quot;username-input&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template v-else&gt;</span><br><span class="line">  &lt;label&gt;Email&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your email address&quot; key=&quot;email-input&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>现在，每次切换时，输入框都将被重新渲染。  </p>
+<p>注意，label元素仍然会被高效地复用，因为它们没有添加 key 属性。</p>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>另一个用于根据条件展示元素的选项是 v-show 指令。用法大致一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-show=&quot;ok&quot;&gt;Hello!&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>不同的是带有v-show的元素<strong>始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。</strong></p>
+<p><strong>注意，v-show 不支持 template 元素，也不支持 v-else。</strong></p>
+<h2 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a>v-if vs v-show</h2><p>v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被<em>销毁和重建</em>。</p>
+<p>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
+<p>相比之下，v-show 就简单得多——不管初始条件是什么，元素<em>总是会被渲染</em>，并且只是简单地基于 CSS 进行切换。</p>
+<p>一般来说，<strong>v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销</strong>。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</p>
+
+          
         
       
     </div>
@@ -548,12 +713,7 @@
 
       
         
-          
-          jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。  
-jsonp原理利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 
-第三方产生的响应为json数据的包装（故称之为jsonp，即json padding）。  
-它的基本思想是，网页通过添加一个script元素，向服
-          ...
+          <p>jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/13/jsonp解决跨域问题/#more" rel="contents">
@@ -701,10 +861,7 @@ jsonp原理利用script标签没有跨域限制的“漏洞”，来达到与第
 
       
         
-          
-          重载的概念重载，简单说，就是函数或者方法有相同的名称，但是参数列表(包括参数个数和参数类型)不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。
-js中的函数重载js中没有重载。就是说，js不允许有名字相同的函数，如果你声明了两个名字相同的函数，后一个就会覆盖掉前一个。在
-          ...
+          <h4 id="重载的概念"><a href="#重载的概念" class="headerlink" title="重载的概念"></a>重载的概念</h4><p>重载，简单说，就是函数或者方法有相同的名称，但是参数列表(包括参数个数和参数类型)不相同的情形，这样的同名不同参数的函数或者方法之间，互相称之为重载函数或者方法。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/24/关于函数重载和arguments/#more" rel="contents">
@@ -852,14 +1009,9 @@ js中的函数重载js中没有重载。就是说，js不允许有名字相同�
 
       
         
-          
-          前言
-this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接  
-
-正文this是Javascript语言的一个关键字。
-它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如，
-12
-          ...
+          <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
+<p>this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/03/11/this的用法/#more" rel="contents">
@@ -1007,13 +1159,7 @@ this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本
 
       
         
-          
-          not defined意为没有定义的变量。例：
-123&lt;script type=&quot;text/javascript&quot;&gt;		console.log(m);&lt;/script&gt;
-上述代码中m没有被定义，此时浏览器会报错
-
-Uncaught ReferenceErr
-          ...
+          <h5 id="not-defined"><a href="#not-defined" class="headerlink" title="not defined"></a>not defined</h5><p>意为没有定义的变量。<br>例：<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/02/24/not-defined、undefined和null的区别/#more" rel="contents">
@@ -1106,7 +1252,7 @@ Uncaught ReferenceErr
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1128,7 +1274,7 @@ Uncaught ReferenceErr
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1202,7 +1348,7 @@ Uncaught ReferenceErr
             <h3 class="widget-title">标签云</h3>
             <div id="myCanvasContainer" class="widget tagcloud">
                 <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computed/">computed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonp/">jsonp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/not-defined/">not defined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/undefined/">undefined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数重载/">函数重载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computed/">computed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonp/">jsonp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/not-defined/">not defined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/undefined/">undefined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v-if/">v-if</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v-show/">v-show</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数重载/">函数重载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
                 </canvas>
             </div>
         </div>

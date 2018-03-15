@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接    正文this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如， 12345　　function test()&amp;#123;　　　　this.x = 1;　　&amp;#125;">
+<meta name="description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接">
 <meta name="keywords" content="this,js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaScript中this的用法">
 <meta property="og:url" content="http://kursaal.vip/2017/03/11/this的用法/index.html">
 <meta property="og:site_name" content="不万能的杂货铺">
-<meta property="og:description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接    正文this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如， 12345　　function test()&amp;#123;　　　　this.x = 1;　　&amp;#125;">
+<meta property="og:description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T15:50:11.658Z">
+<meta property="og:updated_time" content="2018-03-15T03:32:32.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javaScript中this的用法">
-<meta name="twitter:description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接    正文this是Javascript语言的一个关键字。 它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如， 12345　　function test()&amp;#123;　　　　this.x = 1;　　&amp;#125;">
+<meta name="twitter:description" content="前言 this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。原文链接">
 
 
 
@@ -399,8 +399,9 @@
 
       
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
-<p>this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="noopener">原文链接</a>  </p>
+<p>this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
+<a id="more"></a>
 <h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>this是Javascript语言的一个关键字。</p>
 <p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 1;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
@@ -582,7 +583,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +605,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -694,7 +695,7 @@ var jiathis_config={
             <h3 class="widget-title">标签云</h3>
             <div id="myCanvasContainer" class="widget tagcloud">
                 <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computed/">computed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonp/">jsonp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/not-defined/">not defined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/undefined/">undefined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数重载/">函数重载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
+                    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computed/">computed</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonp/">jsonp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/not-defined/">not defined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/undefined/">undefined</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v-if/">v-if</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v-show/">v-show</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数重载/">函数重载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
                 </canvas>
             </div>
         </div>
