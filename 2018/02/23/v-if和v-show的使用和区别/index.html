@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。    v-if在字符串模板中，比如 Handlebars，我们得像这样写一个条件块：html代码：1234&amp;lt;!-- Handlebar">
+<meta name="description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。">
 <meta name="keywords" content="Vue,v-if,v-show">
 <meta property="og:type" content="article">
 <meta property="og:title" content="v-if和v-show的使用和区别">
 <meta property="og:url" content="http://kursaal.vip/2018/02/23/v-if和v-show的使用和区别/index.html">
 <meta property="og:site_name" content="不万能的杂货铺">
-<meta property="og:description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。    v-if在字符串模板中，比如 Handlebars，我们得像这样写一个条件块：html代码：1234&amp;lt;!-- Handlebar">
+<meta property="og:description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T05:28:34.157Z">
+<meta property="og:updated_time" content="2018-03-15T05:41:01.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="v-if和v-show的使用和区别">
-<meta name="twitter:description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。    v-if在字符串模板中，比如 Handlebars，我们得像这样写一个条件块：html代码：1234&amp;lt;!-- Handlebar">
+<meta name="twitter:description" content="前言 专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。">
 
 
 
@@ -399,8 +399,9 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。  </p>
+<p>专门记一篇关于vue条件渲染的文章似乎没有必要，刚开始也没打算记。但在应用过程中有时会有点迷惑，什么时候用v-if，什么时候用v-show，这两者有什么区别？所以，还是决定记一下，虽然大部分都是官网的介绍，但俗话说，眼过千变不如手过一遍。所以，记此篇。 </p>
 </blockquote>
+<a id="more"></a>
 <h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><p>在字符串模板中，比如 Handlebars，我们得像这样写一个条件块：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Handlebars 模板 --&gt;</span><br><span class="line">&#123;&#123;#if ok&#125;&#125;</span><br><span class="line">  &lt;h1&gt;Yes&lt;/h1&gt;</span><br><span class="line">&#123;&#123;/if&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在 Vue 中，我们使用 v-if 指令实现同样的功能：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-if=&quot;ok&quot;&gt;Yes&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
 <p>也可以用 v-else 添加一个“else 块”：<br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-if=&quot;ok&quot;&gt;Yes&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else&gt;No&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
