@@ -73,4 +73,16 @@
         <tag>not defined</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[关于盒模型的理解]]></title>
+    <url>%2F2017%2F01%2F16%2F%E5%85%B3%E4%BA%8E%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[前言 盒子是无处不在的。html任何一个元素都可以看作一个盒子，这个盒子不可见，但是它存在于页面的每个角落。 盒子模型简介一个盒子包括了content（实际内容）、border（边框）、padding（内边距）和margin（外边距）。下图为一个盒子模型图： content（内容）盒子的内容，显示文本和图像。我们给元素设置的width和height其实是content的宽高， 如果指定高度大于显示内容所需高度，多余的高度会产生类似内边距一样的效果；如果指定高度小于显示内容所需高度，会出现滚动条。如果元素内容的高度大于元素框的高度，浏览器的具体行为取决于overflow属性。 border（边框）元素的边框是围绕元素内容的内边距的一条或多条线。边框由粗细、样式和颜色三部分组成。 padding（内边距）清除内容周围的区域，内边距是透明的，取值不能为负，受盒子的Background属性影响，padding是有背景的。 margin（外边距）在元素外创建额外的空白，空白通常指不能放其他元素的区域，而且在这个区域中可以看到父元素的背景（padding所带的是本身的背景而非父元素）。margin经常取负值实现定位的作用。 外边距有一个合并问题，经常使人们混淆，简单来说，外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。 两种盒子模型其实盒模型有两种，分别是ie盒子模型（IE6以下版本浏览器)和标准w3c盒子模型，区别在于前者content的宽度和高度包括了border和padding。 margin（外边界）虽不可见，但是它确实在文档中占据了空间，我们要区分两个概念即：盒子所占空间（计入margin ）和盒子实际的大小（不计入margin） 。 实例区分两种盒模型举个例子来区分两种盒模型：一个盒子的 margin 为 20px，border 为 2px，padding 为 10px，content 的宽为 200px、高为 50px。 在ie盒子模型中： 盒子所占空间：width=20ｘ2+200=240；height=20ｘ2+50=90 盒子实际大小：width=200；height=50 在标准w3c盒子模型中： 盒子所占空间：width=20ｘ2+2ｘ2+10ｘ2+200=264；height=20ｘ2+２ｘ2+10ｘ2 +50=114 盒子实际大小：width=200 +2ｘ2+10ｘ2=224；height=50+2ｘ2+10ｘ2=74 解释到这里，有的人可能会想起CSS3里面有个叫做box-sizing的属性，咦？两个盒模型不就是它不同取值下的效果吗？ box-sizing和两种盒模型不得不说的事box-sizing有三个取值： content-box:使元素遵循标准 w3c 盒子模型（默认值）。 border-box:使元素遵循ie 盒子模型。 inherit： 规定应从父元素继承 box-sizing 属性的值。 当你遵循ie盒子模型(box-sizing取值为border-box)时，不管你如何设置padding和border（小于width/2），它只在盒子里面伸缩，不影响整体的宽高，这个border-box是不是在某些时候非常好用？但也不能盲目地用，因为它会影响content，如果padding和border太大，会把内容挤掉的。 现在还在用IE6以下的浏览器的用户已经很少了，所以目前浏览器大部分元素都是基于W3C标准盒子模型 上。所以我们平常说的盒子模型一般就是标准w3c盒子模型（但对于input、button元素默认border-box，还是基于传统的ie 盒子模型）。 参考资料谈谈我对盒模型的理解]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+        <tag>盒模型</tag>
+      </tags>
+  </entry>
 </search>
