@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="不万能的杂货铺">
 <meta property="og:description" content="事件绑定的两种方式以click事件为例：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T10:22:46.645Z">
+<meta property="og:updated_time" content="2018-03-23T10:26:29.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery中的事件委托">
 <meta name="twitter:description" content="事件绑定的两种方式以click事件为例：">
@@ -416,7 +416,7 @@
 <p>通过点击’添加’按钮，我们在ul里动态添加了一个li，此时，通过click方式，新增加的li是没有点击事件的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;li&apos;).click(function()&#123;</span><br><span class="line">    console.log($(this).text());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>而通过on方式给ul添加，我们后来添加的li也是有点击事件的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;ul&apos;).on(&apos;click&apos;,&apos;li&apos;,function()&#123;</span><br><span class="line">    console.log($(this).text());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h2 id="事件委托原理"><a href="#事件委托原理" class="headerlink" title="事件委托原理"></a>事件委托原理</h2><p>那么怎么实现这个动态监听的过程呢？<br>on()事件相当于是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;ul&apos;).click(function()&#123;</span><br><span class="line">    if(点击的是li)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>给ul添加了一个click事件，党点击的是li，事件冒泡原理，从里到外，就相当于点击了ul，那么就会执行后面的操作，本质上只给ul添加了一个事件。</p>
+<p>给ul添加了一个click事件，当点击的是li，事件冒泡原理，从里到外，就相当于点击了ul，那么就会执行后面的操作，本质上只给ul添加了一个事件。</p>
 <h2 id="事件委托的好处"><a href="#事件委托的好处" class="headerlink" title="事件委托的好处"></a>事件委托的好处</h2><ol>
 <li>原来的事件绑定，相当于给所有的li都要绑定事件，现在只需要给ul一个元素绑定事件，大大提高了效率和页面性能</li>
 <li>解决了动态添加的元素不能触发事件的问题。</li>
