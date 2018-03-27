@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="事件委托," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,18 +81,14 @@
 
 
 
-<meta name="description" content="事件绑定的两种方式以click事件为例：">
-<meta name="keywords" content="事件委托">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery中的事件委托">
-<meta property="og:url" content="http://kursaal.vip/2016/12/23/jQuery中的事件委托/index.html">
+<meta property="og:title" content="this is a test demo">
+<meta property="og:url" content="http://kursaal.vip/2018/03/27/this-is-a-test-demo/index.html">
 <meta property="og:site_name" content="不万能的杂货铺">
-<meta property="og:description" content="事件绑定的两种方式以click事件为例：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T10:26:29.601Z">
+<meta property="og:updated_time" content="2018-03-27T02:27:37.472Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery中的事件委托">
-<meta name="twitter:description" content="事件绑定的两种方式以click事件为例：">
+<meta name="twitter:title" content="this is a test demo">
 
 
 
@@ -122,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://kursaal.vip/2016/12/23/jQuery中的事件委托/"/>
+  <link rel="canonical" href="http://kursaal.vip/2018/03/27/this-is-a-test-demo/"/>
 
 
 
 
 
-  <title>jQuery中的事件委托 | 不万能的杂货铺</title>
+  <title>this is a test demo | 不万能的杂货铺</title>
   
 
 
@@ -309,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kursaal.vip/2016/12/23/jQuery中的事件委托/">
+    <link itemprop="mainEntityOfPage" href="http://kursaal.vip/2018/03/27/this-is-a-test-demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="About Mr">
@@ -326,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jQuery中的事件委托</h1>
+          <h1 class="post-title" itemprop="name headline">this is a test demo</h1>
         
 
         <div class="post-meta">
@@ -338,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T18:11:09+08:00">
-                2016-12-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T10:27:37+08:00">
+                2018-03-27
               </time>
             
 
@@ -348,28 +344,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">jQuery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -398,32 +372,7 @@
       
 
       
-        <h2 id="事件绑定的两种方式"><a href="#事件绑定的两种方式" class="headerlink" title="事件绑定的两种方式"></a>事件绑定的两种方式</h2><p>以click事件为例：<br><a id="more"></a> </p>
-<ol>
-<li><p>普通绑定事件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.btn1&apos;).click(function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>on绑定事件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(document).on(&apos;click&apos;,&apos;.btn2&apos;,function()&#123;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="两种绑定方式的区别"><a href="#两种绑定方式的区别" class="headerlink" title="两种绑定方式的区别"></a>两种绑定方式的区别</h2><ol>
-<li>click事件是在页面加载后，获取的所有类名为btn1的元素，然后绑定了这个click事件，要是通过其他操作再生成一个btn1元素，它就没有click这个事件；</li>
-<li>而on()事件起到了监听的效果,可以实现动态html元素绑定，比如一开始只有一个btn2元素，通过某种方法又加了一个btn2元素，这个元素也可以点击，可以无限添加btn2。  </li>
-</ol>
-<p>举个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;我是第一个&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;我是第二个&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;button&gt;添加&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;button&apos;).click(function()&#123;</span><br><span class="line">    $(&apos;ul&apos;).append($(&apos;&lt;li&gt;我是被添加的&lt;/li&gt;&apos;));</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>通过点击’添加’按钮，我们在ul里动态添加了一个li，此时，通过click方式，新增加的li是没有点击事件的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;li&apos;).click(function()&#123;</span><br><span class="line">    console.log($(this).text());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>而通过on方式给ul添加，我们后来添加的li也是有点击事件的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;ul&apos;).on(&apos;click&apos;,&apos;li&apos;,function()&#123;</span><br><span class="line">    console.log($(this).text());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="事件委托原理"><a href="#事件委托原理" class="headerlink" title="事件委托原理"></a>事件委托原理</h2><p>那么怎么实现这个动态监听的过程呢？<br>on()事件相当于是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;ul&apos;).click(function()&#123;</span><br><span class="line">    if(点击的是li)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>给ul添加了一个click事件，当点击的是li，事件冒泡原理，从里到外，就相当于点击了ul，那么就会执行后面的操作，本质上只给ul添加了一个事件。</p>
-<h2 id="事件委托的好处"><a href="#事件委托的好处" class="headerlink" title="事件委托的好处"></a>事件委托的好处</h2><ol>
-<li>原来的事件绑定，相当于给所有的li都要绑定事件，现在只需要给ul一个元素绑定事件，大大提高了效率和页面性能</li>
-<li>解决了动态添加的元素不能触发事件的问题。</li>
-</ol>
-<p>注意：jQuery1.7+开始支持</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.cnblogs.com/wufangfang/p/5333007.html" target="_blank" rel="noopener">jQuery里面的普通绑定事件和on委托事件</a></p>
-
+        
       
     </div>
     
@@ -446,12 +395,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/事件委托/" rel="tag"><i class="fa fa-tag"></i> 事件委托</a>
-          
-        </div>
-      
 
       
       
@@ -461,15 +404,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/03/12/关于Vue中的计算属性computed/" rel="next" title="关于Vue中的计算属性computed">
+                <i class="fa fa-chevron-left"></i> 关于Vue中的计算属性computed
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/16/关于盒模型的理解/" rel="prev" title="关于盒模型的理解">
-                关于盒模型的理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -547,17 +490,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -644,22 +578,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定的两种方式"><span class="nav-number">1.</span> <span class="nav-text">事件绑定的两种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两种绑定方式的区别"><span class="nav-number">2.</span> <span class="nav-text">两种绑定方式的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托原理"><span class="nav-number">3.</span> <span class="nav-text">事件委托原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托的好处"><span class="nav-number">4.</span> <span class="nav-text">事件委托的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
