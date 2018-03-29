@@ -6,7 +6,9 @@ tags: [hexo]
 ---
 ## 前言
 > 最近换了个电脑，于是出现在新电脑上如何更新hexo个人网站的问题，网上各种方法，个人觉得还是有些不明白的地方，踩坑无数。最后终于成功，所以特此记下，也希望给其他人能有一些帮助。文章中用‘旧电脑’指代原来已经搭建好hexo的电脑，‘新电脑’指代即将要搭建hexo环境的电脑。
+
 <!--more-->
+
 ## 旧电脑上的操作
 ### 准备工作
 首先确保自己已经使用hexo在github搭建好了自己的个人博客，github仓库中如下图显示：![image](https://upload-images.jianshu.io/upload_images/2859254-e60e6b7e367b36fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
