@@ -6,7 +6,7 @@ tags: [git]
 ---
 #### 初始化
 初始化一个Git仓库，在当前文件夹，使用git init命令。
-<!--more-- >
+<!--more-->
 #### 添加文件到Git仓库
 添加文件到Git仓库，分两步：
 1. 使用命令git add filename，注意，可反复多次使用，添加多个文件；
@@ -27,8 +27,8 @@ $ git commit -m "add 3 files."
 #### 版本回退
 1. 首先，可以用git log查看提交的历史记录。![image](https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/E7F3D52E8A19412785294FA5A4970B76/3116)
 
-上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD\^，上上一个版本就是HEAD\^\^，当然往上100个版本写100个\^比较容易数不过来，所以写成HEAD~100。
-2. 使用git reset --hard HEAD\^命令，回退到上个版本。
+上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+2. 使用git reset --hard HEAD^命令，回退到上个版本。
 3. 回退到上个版本后，又后悔了怎么办？这时我们可以通过commit id来回到你想回到的任何版本。版本号写前面六七位就可以了。如：git reset --hard e8008
 4. 找不到commit id怎么办？可以使用git reflog查看你的每一次命令。![image](https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/B5C373895061401AA6087EA2DB8C7123/3153)
 
