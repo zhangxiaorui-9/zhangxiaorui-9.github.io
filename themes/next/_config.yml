@@ -99,7 +99,7 @@ menu:
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  resume: /animating-remuse/public
+  resume: /animating-resume/public
   commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
