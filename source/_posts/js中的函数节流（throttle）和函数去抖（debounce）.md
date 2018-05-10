@@ -1,6 +1,6 @@
 ---
 title: js中的函数节流（throttle）和函数去抖（debounce）
-date: 2018-04-22 19:49:56
+date: 2017-07-22 19:49:56
 categories: javaScript
 tags: [throttle,debounce]
 ---
