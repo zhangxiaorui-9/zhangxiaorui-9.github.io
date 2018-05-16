@@ -11,35 +11,26 @@ tags: [深拷贝]
 ### 方式一：递归拷贝
 
 ```
-function cloneDeep(obj) {
-    if (typeof obj !== 'object' || Object.keys(obj).length === 0) {
-        return obj
+function deepClone(obj,newObj) {
+    if(typeof obj !== 'object'){
+        return obj;
     }
-    let resultData = {}
-    return recursion(obj, resultData)
-}
-
-function recursion(obj, data = {}) {
-    for (key in obj) {
-        if (typeof obj[key] == 'object' && Object.keys(obj[key].length > 0)) {
-            data[key] = recursion(obj[key])
-        } else {
-            data[key] = obj[key]
+    var newObj = newObj || {};
+    for(var key in obj){
+        //首先判断是不是自身属性，如果不是，则跳过本次循环
+        if(!obj.hasOwnProperty(key)){
+            continue;
+        }
+        if(typeof obj[key] === 'object'){
+            //判断是数组还是对象
+            newObj[key] = Object.prototype.toString.call(obj[key]) === '[object Array]'?[]:{};
+            deepClone(obj[key],newObj[key]);
+        }else{
+            newObj[key] = obj[key];
         }
     }
-    return data
+    return newObj;
 }
-let obj = {
-    name: '小明',
-    age: {
-        child: 20
-    }
-}
-let obj2 = cloneDeep(obj)
-obj2.name = '小红'
-obj2.age.child = 24
-console.log(obj); // {name:'小明',age:{child:20}}
-console.log(obj2);// {name:'小红',age:{child:24}}
 ```
 ### 方式二：jquery中$.extent方法
 ```
