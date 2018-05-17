@@ -85,31 +85,23 @@ window.addEventListener('scroll', throttleRun)
 
 
 {% codeblock lang:objc %}
-function debounce(func, wait) {
-    let lastTime = null;
-    let timeout;
+function debounce(method, delay) {
+    var timer = null;
     return function () {
-        let context = this;
-        let now = new Date();
-        let arg = arguments;
-        // 判定不是一次抖动
-        if (now - lastTime - wait > 0) {
-            timeout = setTimeout(() => {
-                func.apply(context, arg)
-            }, wait)
-        } else {
-            if (timeout) {
-                clearTimeout(timeout)
-                timeout = null
-            }
-            timeout = setTimeout(() => {
-                func.apply(context, arg)
-            }, wait)
-        }
-        // 注意这里lastTime是上次的触发时间
-        lastTime = now
+        var context = this, args = arguments;
+        if(timer){
+            clearTimeout(timer);
+            timer = null;
+        } 
+        timer = setTimeout(function () {
+            method.apply(context, args);
+        }, delay);
     }
 }
+let debounceRun = debounce(() => {
+        console.log('123');
+}, 600);
+window.addEventListener('resize', debounceRun);
 {% endcodeblock %}
 调用方法和之前相同。
 
