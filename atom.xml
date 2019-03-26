@@ -63,6 +63,28 @@
   </entry>
   
   <entry>
+    <title>查找某个元素在数组中的下标</title>
+    <link href="http://kursaal.vip/2018/03/26/%E6%9F%A5%E6%89%BE%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E4%B8%8B%E6%A0%87/"/>
+    <id>http://kursaal.vip/2018/03/26/查找某个元素在数组中的下标/</id>
+    <published>2018-03-26T05:52:05.000Z</published>
+    <updated>2019-03-26T05:55:11.954Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="第一种：利用数组的findIndex方法-适用于元素是数字或者字符串"><a href="#第一种：利用数组的findIndex方法-适用于元素是数字或者字符串" class="headerlink" title="第一种：利用数组的findIndex方法,适用于元素是数字或者字符串"></a>第一种：利用数组的findIndex方法,适用于元素是数字或者字符串</h5><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 查找元素b的下标</span><br><span class="line">const arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">const index = arr.findIndex(item =&gt; &#123;</span><br><span class="line"> return item === &apos;b&apos;   </span><br><span class="line">&#125;)</span><br><span class="line">console.log(index)  // 1</span><br></pre></td></tr></table></figure><h5 id="第二种：利用lodash插件中的findIndex方法，适用于元素是对象"><a href="#第二种：利用lodash插件中的findIndex方法，适用于元素是对象" class="headerlink" title="第二种：利用lodash插件中的findIndex方法，适用于元素是对象"></a>第二种：利用lodash插件中的findIndex方法，适用于元素是对象</h5><p>首先，通过npm安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save lodash</span><br></pre></td></tr></table></figure><p>然后在项目中引入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import _ from &apos;lodash&apos;</span><br></pre></td></tr></table></figure><p>用法</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const arr = [</span><br><span class="line">    &#123;</span><br><span class="line">        name: &apos;xiaoming&apos;,</span><br><span class="line">        age: 16</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: &apos;lili&apos;,</span><br><span class="line">        age: 18</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        name: &apos;andy&apos;,</span><br><span class="line">        age: 3</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">const index = _.findIndex(arr, &#123; name: &apos;andy&apos; &#125;)</span><br><span class="line">console.log(index) // 2</span><br></pre></td></tr></table></figure><p>扩展：lodash的深拷贝</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    name: &apos;xiaoming&apos;,</span><br><span class="line">    age: 16</span><br><span class="line">&#125;</span><br><span class="line">const clonedObj = _.cloneDeep(obj)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;第一种：利用数组的findIndex方法-适用于元素是数字或者字符串&quot;&gt;&lt;a href=&quot;#第一种：利用数组的findIndex方法-适用于元素是数字或者字符串&quot; class=&quot;headerlink&quot; title=&quot;第一种：利用数组的findIndex方法,适用于元素是数字或者字符串&quot;&gt;&lt;/a&gt;第一种：利用数组的findIndex方法,适用于元素是数字或者字符串&lt;/h5&gt;
+    
+    </summary>
+    
+      <category term="javaScript" scheme="http://kursaal.vip/categories/javaScript/"/>
+    
+    
+      <category term="下标" scheme="http://kursaal.vip/tags/%E4%B8%8B%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于Vue中的计算属性computed</title>
     <link href="http://kursaal.vip/2018/03/12/%E5%85%B3%E4%BA%8EVue%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7computed/"/>
     <id>http://kursaal.vip/2018/03/12/关于Vue中的计算属性computed/</id>
