@@ -140,6 +140,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[元素宽高成比例自适应]]></title>
+    <url>%2F2017%2F04%2F11%2F%E5%85%83%E7%B4%A0%E5%AE%BD%E9%AB%98%E6%88%90%E6%AF%94%E4%BE%8B%E8%87%AA%E9%80%82%E5%BA%94%2F</url>
+    <content type="text"><![CDATA[前言在开发过程中，我们经常会遇到让元素的宽高成一定比例的情况。或者在使用轮播图时，如果我们只是靠图片撑开元素的高度，那图片未加载出来时，页面会出现抖动的情况。为了避免这种情况，我们就需要让容器宽高成一定比例，如果图片是600*300的尺寸，我们就需要让容器的宽高比为2:1。 第一种方式我们可以使容器的宽度为100%，但高度不能使用50%，因为元素的高度是根据父元素的高度为基数的，并不是宽度。那我们这时候就需要用一点小技巧了，我们知道元素的padding值都是以父元素的宽度为基数的。那我们就可以这样实现：123456div &#123; width: 100%; height: 0; // 防止内容撑开高度 padding-bottom: 50%; overflow:hidden;&#125; 其实代码很简单，主要是记录一下思路。 第二种方式还有另一种实现方式：使用vw，相对于视口的宽度，视口被均分为100单位的vw1234div&#123; width:100vw; height:50vw;&#125; 但是这种目前兼容性不是很好，所以如果需要兼容性好的话，还是使用第一种方法吧！]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>自适应</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[圣杯布局]]></title>
     <url>%2F2017%2F04%2F02%2F%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%2F</url>
     <content type="text"><![CDATA[前言 在上一篇实现了双飞翼布局，这篇来实现一下圣杯布局。圣杯布局和双飞翼实现的效果是一样的，都是三栏布局，两侧栏宽度固定，中间栏自适应并且能在浏览器中优先展示渲染。 圣杯布局废话不多说，直接上代码吧。 首先，先给出页面结构，在三栏外面套一个容器，如下代码：1234567&lt;body&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;center col&quot;&gt;&lt;/div&gt; &lt;div class=&quot;left col&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right col&quot;&gt;&lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 上面就是我们第一步的页面结构，把center写在第一个是为了实现在浏览器优先渲染。 然后，开始写样式，首先给三栏写上基本样式如下,高度都为400px：123456789101112131415.col&#123; height:400px;&#125;.center&#123; width:100%; background:red;&#125;.left&#123; width:200px; background:green;&#125;.right&#123; width:200px; background:blue;&#125; 到这里，我们三栏的基本样式就出来了。此时，三栏并不在一行，那块级元素怎么才能一行显示呢？那就是通过浮动。所以，我们再加上12345678910111213141516.col&#123; height: 400px; float: left;//新增&#125;.center&#123; width: 100%; background: red;&#125;.left&#123; width: 200px; background: green;&#125;.right&#123; width: 200px; background: blue;&#125; 这时候center的宽度是占满屏幕的，那这样才能让它在中间呢？这时给外层的container加上样式：123.container &#123; padding: 0 200px;&#125; 这时候，已经实现了三栏都在中间，但由于center宽度为100%，左右两栏被挤到了第二行，这时，就需要用上负边距来使三栏在同一行123456789101112131415161718192021.container &#123; padding: 0 200px;&#125;.col&#123; height: 400px; float: left;&#125;.center&#123; width: 100%; background: red;&#125;.left&#123; width: 200px; background: green; margin-left: -100%; // 新增&#125;.right&#123; width: 200px; background: blue; margin-left: -200px; // 新增&#125; 到这里，三栏已经在同一行了，但三栏现在都是在中间，怎么让左右两栏位于两侧呢？这时我们就需要给左右两栏加上相对定位来改变他们自身的位置：12345678910111213141516171819202122232425.container &#123; padding: 0 200px;&#125;.col&#123; height: 400px; float: left;&#125;.center&#123; width: 100%; background: red;&#125;.left&#123; width: 200px; background: green; margin-left: -100%; position: relative; // 新增 left: -200px; // 新增&#125;.right&#123; width: 200px; background: blue; margin-left: -200px; position: relative; // 新增 left: 200px; // 新增&#125; 至此，我们就实现了圣杯布局！]]></content>
