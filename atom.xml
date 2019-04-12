@@ -279,6 +279,28 @@
   </entry>
   
   <entry>
+    <title>查找数组中某个元素出现的所有下标</title>
+    <link href="http://kursaal.vip/2017/06/12/%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%85%83%E7%B4%A0%E5%87%BA%E7%8E%B0%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%8B%E6%A0%87/"/>
+    <id>http://kursaal.vip/2017/06/12/查找数组中某个元素出现的所有下标/</id>
+    <published>2017-06-12T01:25:16.000Z</published>
+    <updated>2019-04-12T06:29:10.136Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几天在工作中遇到一个需求，需要在一个url中截取第二个’/‘开始后面的字符，于是就需要获取到第二个’/‘的小标。如何在字符串中获取某个字符第n次出现的下标呢？用此文记录一下。<br><a id="more"></a></p><h4 id="获取字符串中某字符第n次出现的下标"><a href="#获取字符串中某字符第n次出现的下标" class="headerlink" title="获取字符串中某字符第n次出现的下标"></a>获取字符串中某字符第n次出现的下标</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function find(str, cha, num) &#123;</span><br><span class="line">  let index = str.indexOf(cha)</span><br><span class="line">  for (let i = 0;i &lt; num; i ++) &#123;</span><br><span class="line">    index = str.indexOf(cha, index+1) // 第二个参数为查找的起始位置</span><br><span class="line">  &#125;</span><br><span class="line">  return index</span><br><span class="line">&#125;</span><br><span class="line">var str = &apos;-a-b--c-f&apos;</span><br><span class="line">console.log(find(str,&apos;-&apos;, 2)) // 第三次出现的下标</span><br></pre></td></tr></table></figure><h4 id="查找数组中某个元素出现的所有下标"><a href="#查找数组中某个元素出现的所有下标" class="headerlink" title="查找数组中某个元素出现的所有下标"></a>查找数组中某个元素出现的所有下标</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function find(arr, cha) &#123;</span><br><span class="line">  const indexArr = []</span><br><span class="line">  let index = arr.indexOf(cha)</span><br><span class="line">  // 第一种方法</span><br><span class="line">  // while (index !== -1) &#123;</span><br><span class="line">  //   indexArr.push(index)</span><br><span class="line">  //   index = arr.indexOf(cha, index + 1)</span><br><span class="line">  // &#125;</span><br><span class="line"></span><br><span class="line">  // 第二种方法</span><br><span class="line">  for (let i = 0; i &lt; arr.length; i ++) &#123;</span><br><span class="line">    if (index === -1) break // 如果找不到，跳出循环</span><br><span class="line">    indexArr.push(index)</span><br><span class="line">    index = arr.indexOf(cha, index + 1)</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  return indexArr</span><br><span class="line">&#125;</span><br><span class="line">const arr = [&quot;Banana&quot;,&quot;Orange&quot;,&quot;Apple&quot;,&quot;Mango&quot;,&quot;Banana&quot;,&quot;Orange&quot;,&quot;Apple&quot;]</span><br><span class="line">console.log(find(arr, &apos;Banana&apos;)) // [0, 4]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;前几天在工作中遇到一个需求，需要在一个url中截取第二个’/‘开始后面的字符，于是就需要获取到第二个’/‘的小标。如何在字符串中获取某个字符第n次出现的下标呢？用此文记录一下。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javaScript" scheme="http://kursaal.vip/categories/javaScript/"/>
+    
+    
+      <category term="下标" scheme="http://kursaal.vip/tags/%E4%B8%8B%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>图片懒加载的简单实现</title>
     <link href="http://kursaal.vip/2017/05/25/%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/"/>
     <id>http://kursaal.vip/2017/05/25/图片懒加载的简单实现/</id>
@@ -463,28 +485,6 @@
       <category term="undefined" scheme="http://kursaal.vip/tags/undefined/"/>
     
       <category term="not defined" scheme="http://kursaal.vip/tags/not-defined/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git使用笔记（二）</title>
-    <link href="http://kursaal.vip/2017/01/17/git%E7%AC%94%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>http://kursaal.vip/2017/01/17/git笔笔记（二）/</id>
-    <published>2017-01-17T10:44:06.000Z</published>
-    <updated>2019-03-05T07:30:06.034Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h2><p>本地仓库与github的远程仓库关联的方式有两种：<br><a id="more"></a></p><h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>第一种情况，我们已经在本地创建了一个git仓库后，又想在GitHub创建一个git仓库，并且让这两个仓库进行远程同步。关联方式如下：</p><ol><li>在GitHub上新建一个仓库（Repository），假如仓库命名为learngit;</li><li><p>在本地的git仓库运行命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:userName/learngit.git</span><br><span class="line">//userName为你的GitHub账户名</span><br></pre></td></tr></table></figure></li><li><p>把本地库的所有内容推送到远程库上，由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure></li><li><p>以后的推送或者拉取时就可以简化命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure></li></ol><h3 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h3><p>假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆。</p><ol><li>在GitHub上新建一个仓库（Repository），假如仓库命名为rep;</li><li>克隆到本地<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:userName/rep.git</span><br><span class="line">//userName为你的GitHub账户名</span><br></pre></td></tr></table></figure></li></ol><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h3><p>注：name为分支名称。</p><ol><li>查看当前本地分支：git branch</li><li>查看远程分支: git branch -r</li><li>查看已有的本地及远程分支：git branch -a</li><li>创建分支：git branch name</li><li>切换分支：git checkout name</li><li>创建+切换分支：git checkout -b name</li><li>合并name分支到当前分支：git merge name</li><li>删除本地分支：git branch -d name</li><li>强行删除本地分支：git branch -D name</li><li>删除远程分支：git push origin –delete name</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;关联远程仓库&quot;&gt;&lt;a href=&quot;#关联远程仓库&quot; class=&quot;headerlink&quot; title=&quot;关联远程仓库&quot;&gt;&lt;/a&gt;关联远程仓库&lt;/h2&gt;&lt;p&gt;本地仓库与github的远程仓库关联的方式有两种：&lt;br&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://kursaal.vip/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://kursaal.vip/tags/git/"/>
     
   </entry>
   
