@@ -45,10 +45,10 @@ rss: /atom.xml
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
-  icon: user
+  icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
   copyright:
@@ -99,7 +99,7 @@ menu:
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  resume: /animating-resume/public
+  resume: /animating-resume/public || address-card
   commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
@@ -116,9 +116,9 @@ menu_icons:
 #这是 NexT 最初的版本，黑白主调，大量留白
 #scheme: Mist
 #Muse 的紧凑版本，整洁有序的单栏外观
-scheme: Pisces
+#scheme: Pisces
 #双栏 Scheme，小家碧玉似的清新
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -704,7 +704,7 @@ pace: false
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: false
