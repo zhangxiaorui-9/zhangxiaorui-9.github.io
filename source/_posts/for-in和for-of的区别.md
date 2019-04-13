@@ -4,8 +4,9 @@ date: 2017-08-29 16:17:15
 categories: javaScript
 tags: [for of, for in]
 ---
-### 遍历数组
+![image](http://ppvq158m9.bkt.clouddn.com/bg01.jpg)
 <!-- more -->
+### 遍历数组
 以前我们遍历数组通常使用for循环，例如：
 
 ```
