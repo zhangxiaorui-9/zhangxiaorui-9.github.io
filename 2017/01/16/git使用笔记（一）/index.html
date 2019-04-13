@@ -81,24 +81,24 @@
 
 
 
-<meta name="description" content="初始化初始化一个Git仓库，在当前文件夹，使用git init命令。">
+<meta name="description" content="注文中提到的工作区指还没add到暂存区的 版本库指已经把暂存区的commit后的">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用笔记（一）">
 <meta property="og:url" content="http://kursaal.vip/2017/01/16/git使用笔记（一）/index.html">
 <meta property="og:site_name" content="不万能的杂货铺">
-<meta property="og:description" content="初始化初始化一个Git仓库，在当前文件夹，使用git init命令。">
+<meta property="og:description" content="注文中提到的工作区指还没add到暂存区的 版本库指已经把暂存区的commit后的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/E7F3D52E8A19412785294FA5A4970B76/3116">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/B5C373895061401AA6087EA2DB8C7123/3153">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/60F9657A895C4C49AA780605C2A6C3A2/3170">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/8ED49D1BCDFB4061A653F88F0297BAB8/3180">
-<meta property="og:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/8D5137A773BE4BAD9A74AADBDDA5B2DA/3240">
-<meta property="og:updated_time" content="2019-03-05T07:30:06.033Z">
+<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git01.png">
+<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git03.png">
+<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git02.png">
+<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git04.png">
+<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git05.png">
+<meta property="og:updated_time" content="2019-04-13T04:00:38.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用笔记（一）">
-<meta name="twitter:description" content="初始化初始化一个Git仓库，在当前文件夹，使用git init命令。">
-<meta name="twitter:image" content="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/E7F3D52E8A19412785294FA5A4970B76/3116">
+<meta name="twitter:description" content="注文中提到的工作区指还没add到暂存区的 版本库指已经把暂存区的commit后的">
+<meta name="twitter:image" content="http://ppvq158m9.bkt.clouddn.com/git01.png">
 
 
 
@@ -412,7 +412,9 @@
       
 
       
-        <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>初始化一个Git仓库，在当前文件夹，使用git init命令。<br><a id="more"></a></p>
+        <h4 id="注"><a href="#注" class="headerlink" title="注"></a>注</h4><p>文中提到的<strong>工作区</strong>指还没add到暂存区的</p>
+<p><strong>版本库</strong>指已经把暂存区的commit后的<br><a id="more"></a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>初始化一个Git仓库，在当前文件夹，使用git init命令。</p>
 <h4 id="添加文件到Git仓库"><a href="#添加文件到Git仓库" class="headerlink" title="添加文件到Git仓库"></a>添加文件到Git仓库</h4><p>添加文件到Git仓库，分两步：</p>
 <ol>
 <li><p>使用命令git add filename，注意，可反复多次使用，添加多个文件；</p>
@@ -428,23 +430,23 @@
 </li>
 </ol>
 <h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><ol>
-<li>首先，可以用git log查看提交的历史记录。<img src="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/E7F3D52E8A19412785294FA5A4970B76/3116" alt="image"></li>
+<li>首先，可以用git log查看提交的历史记录。<img src="http://ppvq158m9.bkt.clouddn.com/git01.png" alt="image"></li>
 </ol>
-<p>上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
+<p>上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD\^，上上一个版本就是HEAD\^\^，当然往上100个版本写100个\^比较容易数不过来，所以写成HEAD~100。</p>
 <ol start="2">
-<li>使用git reset --hard HEAD^命令，回退到上个版本。</li>
-<li>回退到上个版本后，又后悔了怎么办？这时我们可以通过commit id来回到你想回到的任何版本。版本号写前面六七位就可以了。如：git reset --hard e8008</li>
-<li>找不到commit id怎么办？可以使用git reflog查看你的每一次命令。<img src="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/B5C373895061401AA6087EA2DB8C7123/3153" alt="image"></li>
+<li>使用git reset –hard HEAD\^命令，回退到上个版本。</li>
+<li>回退到上个版本后，又后悔了怎么办？这时我们可以通过commit id来回到你想回到的任何版本。版本号写前面六七位就可以了。如：git reset –hard e8008</li>
+<li>找不到commit id怎么办？可以使用git reflog查看你的每一次命令。<img src="http://ppvq158m9.bkt.clouddn.com/git03.png" alt="image"></li>
 </ol>
 <h4 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h4><p>当我们修改或者新增文件，在git add fileName之前，通过git status查看当前的状态</p>
-<p><img src="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/60F9657A895C4C49AA780605C2A6C3A2/3170" alt="image"></p>
+<p><img src="http://ppvq158m9.bkt.clouddn.com/git02.png" alt="image"></p>
 <p>然后通过git add fileName，就可以把修改的文件或者新增的文件放到暂存区。</p>
-<p><img src="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/8ED49D1BCDFB4061A653F88F0297BAB8/3180" alt="image"></p>
+<p><img src="http://ppvq158m9.bkt.clouddn.com/git04.png" alt="image"></p>
 <p>此时，暂存区有一个修改过的文件和两个新增的文件。</p>
 <p>由图中的提示可以看出，我们可以通过git reset HEAD fileName 来使指定文件退出暂存区。</p>
-<p>git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit -m ‘’就可以一次性把暂存区的所有修改提交到分支。</p>
+<p>git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit -m’’就可以一次性把暂存区的所有修改提交到分支。</p>
 <h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><ol>
-<li><p>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- fileName。</p>
+<li><p>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – fileName。</p>
 </li>
 <li><p>当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD fileName，这个文件就回到了工作区，第二步按1操作。</p>
 </li>
@@ -454,11 +456,11 @@
 <h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><h5 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h5><p>当你在本地把文件删除后，这时版本库并没有删除，此时分两种情况：</p>
 <ol>
 <li>删除版本库中的，git rm fileName</li>
-<li>恢复本地的，git checkout -- fileName。git checkout -- fileName其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</li>
+<li>恢复本地的，git checkout – fileName。git checkout – fileName其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</li>
 </ol>
 <p>注：版本库是已经提交（commit）的！</p>
 <h5 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h5><p>当你直接使用git rm fileName命令删除版本库中的文件后，在提交之前，可以参考<strong>撤销修改</strong>部分</p>
-<p><img src="https://note.youdao.com/yws/public/resource/ffc6e672786dc95c52387c8d25d5e60e/xmlnote/8D5137A773BE4BAD9A74AADBDDA5B2DA/3240" alt="image"></p>
+<p><img src="http://ppvq158m9.bkt.clouddn.com/git05.png" alt="image"></p>
 <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的官方网站</a></p>
 
       
@@ -672,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文件到Git仓库"><span class="nav-number">2.</span> <span class="nav-text">添加文件到Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看当前状态"><span class="nav-number">3.</span> <span class="nav-text">查看当前状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存区"><span class="nav-number">5.</span> <span class="nav-text">暂存区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">6.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-number">7.</span> <span class="nav-text">删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一种情况"><span class="nav-number">7.1.</span> <span class="nav-text">第一种情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二种情况"><span class="nav-number">7.2.</span> <span class="nav-text">第二种情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#注"><span class="nav-number">1.</span> <span class="nav-text">注</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加文件到Git仓库"><span class="nav-number">3.</span> <span class="nav-text">添加文件到Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看当前状态"><span class="nav-number">4.</span> <span class="nav-text">查看当前状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">5.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暂存区"><span class="nav-number">6.</span> <span class="nav-text">暂存区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">7.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-number">8.</span> <span class="nav-text">删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一种情况"><span class="nav-number">8.1.</span> <span class="nav-text">第一种情况</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二种情况"><span class="nav-number">8.2.</span> <span class="nav-text">第二种情况</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
