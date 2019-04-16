@@ -1,6 +1,6 @@
 ---
 title: 移动端点击（click）事件延迟问题的产生与解决方法
-date: 2018-04-02 16:59:15
+date: 2017-05-13 16:59:15
 categories: javaScript
 tags: [300ms延迟, fastclick]
 ---
