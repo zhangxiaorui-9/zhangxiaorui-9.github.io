@@ -1945,7 +1945,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #60cced;
+  background: #c8fe49;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3273,17 +3273,8 @@ img:hover {
 #footer {
   color: #fff !important;
 }
-#header {
-  width: 82% !important;
-}
-#main-inner {
-  width: 82% !important;
-}
 .headband {
   background: none !important;
-}
-.site-meta {
-  background: url("./images/5.jpg") no-repeat contain !important;
 }
 .with-love {
   color: #a8538c;
