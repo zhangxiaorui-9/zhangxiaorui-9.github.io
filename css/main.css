@@ -1945,7 +1945,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #14a106;
+  background: #6b9130;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3238,14 +3238,11 @@ img:hover {
 }
 @media screen and (min-width: 900px) {
   body {
-    background-image: url("./images/5.jpg");
+    background-image: url("./images/3.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
     background-size: cover;
-  }
-  #footer a {
-    color: #fff;
   }
   .main-inner {
     background: #fff;
@@ -3273,8 +3270,11 @@ img:hover {
   font-weight: 400;
   font-family: 'Damion', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
+#footer {
+  color: #fff !important;
+}
 .with-love {
-  color: #f00;
+  color: #a8538c;
   animation: heartAnimate 1.33s ease-in-out infinite;
 }
 @-moz-keyframes heartAnimate {
