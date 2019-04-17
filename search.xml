@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[test image]]></title>
-    <url>%2F2019%2F04%2F17%2Ftest-image%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[flatten（扁平化）数组]]></title>
     <url>%2F2018%2F11%2F15%2Fflatten%EF%BC%88%E6%89%81%E5%B9%B3%E5%8C%96%EF%BC%89%E6%95%B0%E6%95%B0%E7%BB%84%2F</url>
     <content type="text"><![CDATA[前言顾名思义，扁平化就是将嵌套的多维数组变成一维数组的过程。今天将通过几种方式来实现数组的扁平化。 先定义这几种方法公用的一个数组 1const arr = [1, 2, [3, 4, [5, 6]]] 初级版初级版也通过两种方式来实现 第一种利用数组的concat方法 123456789101112function flatten(arr) &#123; let res = [] arr.map(element =&gt; &#123; if(Array.isArray(element)) &#123; res = res.concat(flatten(element)) &#125; else&#123; res.push(element) &#125; &#125;) return res&#125; 第二种使用参数默认值的方法 1234567891011function flatten(arr, res = []) &#123; for (let item of arr) &#123; if (Array.isArray(item)) &#123; res = flatten03(item, res) &#125; else&#123; res.push(item) &#125; &#125; return res&#125; 进阶版使用…三点运算符结合concat方法 123456function flatten(arr) &#123; while(arr.some(item =&gt; Array.isArray(item))) &#123; arr = [].concat(...arr) &#125; return arr&#125; 终极版Array.flat(n)是ES10扁平数组的api， n表示维度， n值为 Infinity时维度为无限大。我们的例子中是个三维数组，所以，写法为：1arr.flat(3)]]></content>
