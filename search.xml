@@ -287,4 +287,17 @@
         <tag>事件委托</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[slice、substr和substring的区别]]></title>
+    <url>%2F2016%2F12%2F08%2Fslice%E3%80%81substr%E5%92%8Csubstring%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[前言我们经常需要截取字符串，slice(),substr()和substring()都是截取字符串的方法，那这三个方法如何使用，以及三种用法有何不同，今天就来整理一下 参数都为正数时这三种方法都接收两个参数，slice()和substring()接收的是起始位置和结束位置(不包括结束位置)，而substr接收的则是起始位置和所要返回的字符串长度。看个例子：1234var str = &apos;hello world&apos;;console.log(str.slice(4,7)); //o wconsole.log(str.substring(4,7)); //o wconsole.log(str.substr(4,7)); //o world 这里有个需要注意的地方：substring是以两个参数中较小一个作为起始位置，较大的参数作为结束位置。1console.log(str.substring(7,4)); //o w 而slice如果第一个参数大于第二个参数，则返回空字符串。1console.log(str.slice(7,4)); //&apos;&apos; 参数为负数时 slice()会将所有的负数于字符串的长度相加;substr()会将第一个负参数与字符串长度相加，第二个负参数转化为 0;substring() 将所有的负参数转化为 0. 1234567var str = &apos;hello world&apos;; // length = 11console.log(str.slice(-3)); // rld slice(8)console.log(str.substring(-3)); //hello world substring(0)console.log(str.substr(-3)); // rld substr(8)console.log(str.slice(3, -4)); //lo w slice(3, 7)console.log(str.substring(3, -4)); //hel substring(3, 0)console.log(str.substr(3, -4)); // &apos;&apos; substr(3, 0)]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>slice</tag>
+        <tag>substr</tag>
+        <tag>substring</tag>
+      </tags>
+  </entry>
 </search>
