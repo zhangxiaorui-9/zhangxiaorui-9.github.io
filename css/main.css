@@ -1945,7 +1945,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #86ffff;
+  background: #4e26ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3238,7 +3238,7 @@ img:hover {
 }
 @media screen and (min-width: 900px) {
   body {
-    background-image: url("./images/3.jpg");
+    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555662772541&di=fb19b93b3ea07da6bd26197e35d146e7&imgtype=jpg&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160619%2F7aa3a6e25b204b1facb3f241f9e85320_th.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 50%;
