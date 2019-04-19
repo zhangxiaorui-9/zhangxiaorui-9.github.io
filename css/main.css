@@ -1945,7 +1945,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f2d4c9;
+  background: #ff1316;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3238,11 +3238,11 @@ img:hover {
 }
 @media screen and (min-width: 900px) {
   body {
-    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555675419708&di=caee9eddfb7c28a311e5eac74a12fccc&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F56ebbc35cdc51.jpg");
+    background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555677859354&di=0c094607a82e7648b3bcb415a8843335&imgtype=0&src=http%3A%2F%2Fimg.sj33.cn%2Fuploads%2Fallimg%2F201710%2F7-1G00Z92430.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 0 0;
-    background-size: contain;
+    background-size: 100% 100%;
   }
   .main-inner {
     background: #fff;
