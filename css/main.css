@@ -1945,7 +1945,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbeff;
+  background: #c620ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3241,7 +3241,8 @@ img:hover {
     background-image: url("https://img.zcool.cn/community/0155b2582936c8a84a0d304fc8bc44.jpg@1280w_1l_2o_100sh.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-position: 50% 50%;
+    background-size: cover;
   }
   .main-inner {
     background: #fff;
