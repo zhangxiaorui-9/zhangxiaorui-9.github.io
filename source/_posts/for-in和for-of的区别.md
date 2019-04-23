@@ -4,7 +4,7 @@ date: 2017-08-29 16:17:15
 categories: javaScript
 tags: [for of, for in]
 ---
-![image](http://ppvq158m9.bkt.clouddn.com/bg01.jpg)
+![image](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555500528968&di=991e325c9d04c29d1d58a258272046f6&imgtype=0&src=http%3A%2F%2Fs3.lvjs.com.cn%2Fuploads%2Fpc%2Fplace2%2F2018-06-22%2F4a29a65b-245a-487d-b6c5-50ea8b82a725.jpg)
 <!-- more -->
 ### 遍历数组
 以前我们遍历数组通常使用for循环，例如：

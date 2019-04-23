@@ -29,7 +29,7 @@ react-beautify
 #### HTML CSS Support
 让 html 标签上写class 智能提示当前项目所支持的样式
 #### jQuery Code Snippets
-jquery 重度患者必须品，废话不多说，上图：![image](https://note.youdao.com/yws/public/resource/9d45b53b6426be19db12b40358a60273/xmlnote/31F7EFF3ABCC4CE3B0FF04602443A190/2703)
+jquery 重度患者必须品，废话不多说，上图：![image](https://kursaal.oss-cn-beijing.aliyuncs.com/jquery.png?Expires=1555557097&OSSAccessKeyId=TMP.AQFvIWKFw6u9rGxoqIZPDW1Spjmyc0YnrgH-ri-L5xcuOhnlTl35jYg1PRdpAAAwLAIUXdJxdOYCGnlyGlhu2tLfVOg7lBwCFGy3L5NFQmTW04KITKXznTrwP6nO&Signature=yo4wEsAHiFmuNMRxvBFyXofl9ao%3D)
 #### HTMLHint
 html代码检测
 #### CSS Peek

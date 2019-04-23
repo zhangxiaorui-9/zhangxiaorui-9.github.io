@@ -63,17 +63,15 @@ showcallee();
 下面我们利用arguments对象来实现一个参数相加的函数，不论传入多少参数都行，将传入的参数相加后返回。 
 ```
 function add() {
-    var len = arguments.length,
-        sum = 0;
-    for(;len--;){
-        sum += arguments[len];
+    let sum = 0;
+    for(const item of arguments){
+        sum += item;
     }
     return sum;
 }
-
-console.log( add(1,2,3) );   //6
-console.log( add(1,3) );     //4
-console.log( add(1,2,3,5,6,2,7) );   //26
+console.log(add(1, 2, 3));   //6
+console.log(add(1, 3));     //4
+console.log(add(1, 2, 3, 5, 6, 2, 7));   //26
 ``` 
 #### 参考资料
 [js的arguments到底是什么？](http://blog.csdn.net/qq_16339527/article/details/53231725)

@@ -4,8 +4,9 @@ date: 2017-08-13 10:32:07
 categories: javaScript
 tags: [跨域,jsonp]
 ---
-jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。
+![image](http://static.runoob.com/images/mix/BFD206B6-07E8-41B5-AF88-924CECFCA256.png)
 <!--more-->  
+jsonp名字听上去挺高大上，实际只要理解了就是个矮穷矬。
 #### jsonp原理
 利用script标签没有跨域限制的“漏洞”，来达到与第三方通讯的目的。 
 

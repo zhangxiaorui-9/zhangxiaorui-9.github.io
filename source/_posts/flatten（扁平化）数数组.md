@@ -4,7 +4,7 @@ date: 2018-11-15 9:32:15
 categories: javaScript
 tags: [flatten, 扁平化]
 ---
-![image](http://ppvq158m9.bkt.clouddn.com/bg02.png)
+![image](http://static.runoob.com/images/mix/65F53C2E-D255-4EE9-A675-F0C0F3F69D2B.png)
 <!-- more -->
 ### 前言
 顾名思义，扁平化就是将嵌套的多维数组变成一维数组的过程。今天将通过几种方式来实现数组的扁平化。
