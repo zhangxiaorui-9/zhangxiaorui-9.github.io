@@ -89,16 +89,16 @@
 <meta property="og:site_name" content="不万能的杂货铺">
 <meta property="og:description" content="注文中提到的工作区指还没add到暂存区的 版本库指已经把暂存区的commit后的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git01.png">
-<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git03.png">
-<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git02.png">
-<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git04.png">
-<meta property="og:image" content="http://ppvq158m9.bkt.clouddn.com/git05.png">
-<meta property="og:updated_time" content="2019-04-13T04:00:38.139Z">
+<meta property="og:image" content="http://kursaal.vip/2017/01/16/git使用笔记（一）/(https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190805094800374.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190805094847418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190805095434680.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190805100809709.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-08-05T02:34:06.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用笔记（一）">
 <meta name="twitter:description" content="注文中提到的工作区指还没add到暂存区的 版本库指已经把暂存区的commit后的">
-<meta name="twitter:image" content="http://ppvq158m9.bkt.clouddn.com/git01.png">
+<meta name="twitter:image" content="http://kursaal.vip/2017/01/16/git使用笔记（一）/(https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70">
 
 
 
@@ -430,18 +430,18 @@
 </li>
 </ol>
 <h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><ol>
-<li>首先，可以用git log查看提交的历史记录。<img src="http://ppvq158m9.bkt.clouddn.com/git01.png" alt="image"></li>
+<li>首先，可以用git log查看提交的历史记录。<img src="(https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70" alt="image"></li>
 </ol>
 <p>上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD\^，上上一个版本就是HEAD\^\^，当然往上100个版本写100个\^比较容易数不过来，所以写成HEAD~100。</p>
 <ol start="2">
 <li>使用git reset –hard HEAD\^命令，回退到上个版本。</li>
 <li>回退到上个版本后，又后悔了怎么办？这时我们可以通过commit id来回到你想回到的任何版本。版本号写前面六七位就可以了。如：git reset –hard e8008</li>
-<li>找不到commit id怎么办？可以使用git reflog查看你的每一次命令。<img src="http://ppvq158m9.bkt.clouddn.com/git03.png" alt="image"></li>
+<li>找不到commit id怎么办？可以使用git reflog查看你的每一次命令。<img src="https://img-blog.csdnimg.cn/20190805094800374.png" alt="image"></li>
 </ol>
 <h4 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h4><p>当我们修改或者新增文件，在git add fileName之前，通过git status查看当前的状态</p>
-<p><img src="http://ppvq158m9.bkt.clouddn.com/git02.png" alt="image"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190805094847418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>然后通过git add fileName，就可以把修改的文件或者新增的文件放到暂存区。</p>
-<p><img src="http://ppvq158m9.bkt.clouddn.com/git04.png" alt="image"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190805095434680.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70" alt="image"></p>
 <p>此时，暂存区有一个修改过的文件和两个新增的文件。</p>
 <p>由图中的提示可以看出，我们可以通过git reset HEAD fileName 来使指定文件退出暂存区。</p>
 <p>git add命令实际上就是把要提交的所有修改放到暂存区（Stage），然后，执行git commit -m’’就可以一次性把暂存区的所有修改提交到分支。</p>
@@ -460,7 +460,7 @@
 </ol>
 <p>注：版本库是已经提交（commit）的！</p>
 <h5 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h5><p>当你直接使用git rm fileName命令删除版本库中的文件后，在提交之前，可以参考<strong>撤销修改</strong>部分</p>
-<p><img src="http://ppvq158m9.bkt.clouddn.com/git05.png" alt="image"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190805100809709.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70" alt="image"></p>
 <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰的官方网站</a></p>
 
       
