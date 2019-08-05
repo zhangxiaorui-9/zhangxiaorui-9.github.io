@@ -29,21 +29,21 @@ $ git commit -m "add 3 files."
 2. 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。**注意**，使用git diff查看修改内容是在add之前查看。
 
 #### 版本回退
-1. 首先，可以用git log查看提交的历史记录。![image](http://ppvq158m9.bkt.clouddn.com/git01.png)
+1. 首先，可以用git log查看提交的历史记录。![image]((https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 
 上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD\^，上上一个版本就是HEAD\^\^，当然往上100个版本写100个\^比较容易数不过来，所以写成HEAD~100。
 2. 使用git reset --hard HEAD\^命令，回退到上个版本。
 3. 回退到上个版本后，又后悔了怎么办？这时我们可以通过commit id来回到你想回到的任何版本。版本号写前面六七位就可以了。如：git reset --hard e8008
-4. 找不到commit id怎么办？可以使用git reflog查看你的每一次命令。![image](http://ppvq158m9.bkt.clouddn.com/git03.png)
+4. 找不到commit id怎么办？可以使用git reflog查看你的每一次命令。![image](https://img-blog.csdnimg.cn/20190805094800374.png)
 
 #### 暂存区
 当我们修改或者新增文件，在git add fileName之前，通过git status查看当前的状态
 
-![image](http://ppvq158m9.bkt.clouddn.com/git02.png)
+![image](https://img-blog.csdnimg.cn/20190805094847418.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 
 然后通过git add fileName，就可以把修改的文件或者新增的文件放到暂存区。
 
-![image](http://ppvq158m9.bkt.clouddn.com/git04.png)
+![image](https://img-blog.csdnimg.cn/20190805095434680.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 
 此时，暂存区有一个修改过的文件和两个新增的文件。
 
@@ -69,7 +69,7 @@ git add命令实际上就是把要提交的所有修改放到暂存区（Stage�
 ##### 第二种情况
 当你直接使用git rm fileName命令删除版本库中的文件后，在提交之前，可以参考**撤销修改**部分
 
-![image](http://ppvq158m9.bkt.clouddn.com/git05.png)
+![image](https://img-blog.csdnimg.cn/20190805100809709.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 
 #### 参考资料
 [廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)

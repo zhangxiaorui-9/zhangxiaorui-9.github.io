@@ -29,7 +29,7 @@ react-beautify
 #### HTML CSS Support
 让 html 标签上写class 智能提示当前项目所支持的样式
 #### jQuery Code Snippets
-jquery 重度患者必须品，废话不多说，上图：![image](https://kursaal.oss-cn-beijing.aliyuncs.com/jquery.png?Expires=1555557097&OSSAccessKeyId=TMP.AQFvIWKFw6u9rGxoqIZPDW1Spjmyc0YnrgH-ri-L5xcuOhnlTl35jYg1PRdpAAAwLAIUXdJxdOYCGnlyGlhu2tLfVOg7lBwCFGy3L5NFQmTW04KITKXznTrwP6nO&Signature=yo4wEsAHiFmuNMRxvBFyXofl9ao%3D)
+jquery 重度患者必须品，废话不多说，上图：![image](https://img-blog.csdnimg.cn/20190805102522775.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 #### HTMLHint
 html代码检测
 #### CSS Peek
@@ -45,3 +45,11 @@ VUE —— snippet代码片段
 按F1,输入open preview to the side
 #### 设置自动换行
 设置 -- 用户设置 -- 添加"editor.wordWrap": "on" 
+#### fileheader
+可以给文件自动加上头部说明信息
+设置 -- 用户设置 -- 添加 ：
+  "fileheader.Author": "your name",
+  "fileheader.LastModifiedBy": "your name"
+使用方式：在文件中按alt + ctr + i，mac按option + control + i
+#### 让空格显示为点
+设置 -- 用户设置 -- 添加 ："editor.renderWhitespace": "all"
