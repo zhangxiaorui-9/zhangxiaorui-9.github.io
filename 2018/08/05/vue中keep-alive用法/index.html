@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="keep-alive,">
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="不万能的杂货铺">
-<meta property="og:url" content="http://kursaal.vip/tags/fastclick/index.html">
+<meta name="description" content="keep-alive 简介keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。">
+<meta name="keywords" content="keep-alive">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue中keep-alive用法">
+<meta property="og:url" content="http://kursaal.vip/2018/08/05/vue中keep-alive用法/index.html">
 <meta property="og:site_name" content="不万能的杂货铺">
+<meta property="og:description" content="keep-alive 简介keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-05T10:19:51.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不万能的杂货铺">
+<meta name="twitter:title" content="vue中keep-alive用法">
+<meta name="twitter:description" content="keep-alive 简介keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://kursaal.vip/tags/fastclick/">
+  <link rel="canonical" href="http://kursaal.vip/2018/08/05/vue中keep-alive用法/">
 
 
 
 
 
-  <title>标签: fastclick | 不万能的杂货铺</title>
+  <title>vue中keep-alive用法 | 不万能的杂货铺</title>
   
 
 
@@ -152,7 +157,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -298,52 +303,216 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>fastclick<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kursaal.vip/2018/08/05/vue中keep-alive用法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="About Mr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555664357075&di=57fe3c2fd3f3eea0a200c3b1abdddbe5&imgtype=0&src=http%3A%2F%2Fmall8.iqiyipic.com%2Fmall%2F20170714%2F41%2F58%2Fmall_59686f93ad8c1223bfb24158_1x1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不万能的杂货铺">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/05/13/移动端点击（click）事件延迟问题的产生与解决方法/" itemprop="url">
-              
-                <span itemprop="name">移动端点击（click）事件延迟问题的产生与解决方法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">vue中keep-alive用法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-05-13T16:59:15+08:00" content="2017-05-13">
-          05-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-05T18:17:37+08:00">
+                2018-08-05
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="keep-alive-简介"><a href="#keep-alive-简介" class="headerlink" title="keep-alive 简介"></a>keep-alive 简介</h2><p><strong>keep-alive</strong> 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。<br><a id="more"></a><br>用法也很简单：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;component&gt;</span><br><span class="line">    &lt;!-- 该组件将被缓存！ --&gt;</span><br><span class="line">  &lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><ul>
+<li>include - 字符串或正则表达，只有匹配的组件会被缓存</li>
+<li>exclude - 字符串或正则表达式，任何匹配的组件都不会被缓存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 组件 a</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;a&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive include=&quot;a&quot;&gt;</span><br><span class="line">  &lt;component&gt;</span><br><span class="line">    &lt;!-- name 为 a 的组件将被缓存！ --&gt;</span><br><span class="line">  &lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive exclude=&quot;a&quot;&gt;</span><br><span class="line">  &lt;component&gt;</span><br><span class="line">    &lt;!-- 除了 name 为 a 的组件都将被缓存！ --&gt;</span><br><span class="line">  &lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="遇见-vue-router"><a href="#遇见-vue-router" class="headerlink" title="遇见 vue-router"></a>遇见 vue-router</h2><p>router-view 也是一个组件，如果直接被包在 keep-alive 里面，所有路径匹配到的视图组件都会被缓存。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;</span><br><span class="line">    &lt;router-view&gt;</span><br><span class="line">        &lt;!-- 所有路径匹配到的视图组件都会被缓存！ --&gt;</span><br><span class="line">    &lt;/router-view&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果只想 router-view 里面某个组件被缓存，怎么办？</p>
+<ul>
+<li>使用 include/exclude</li>
+<li>增加 router.meta 属性</li>
+</ul>
+<h3 id="使用-include-exclude"><a href="#使用-include-exclude" class="headerlink" title="使用 include/exclude"></a>使用 include/exclude</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 组件 a</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;a&apos;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive include=&quot;a&quot;&gt;</span><br><span class="line">    &lt;router-view&gt;</span><br><span class="line">        &lt;!-- 只有路径匹配到的视图 a 组件会被缓存！ --&gt;</span><br><span class="line">    &lt;/router-view&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+<p>exclude 例子类似。</p>
+<blockquote>
+<p>缺点：需要知道组件的 name，项目复杂的时候不是很好的选择</p>
+</blockquote>
+<h3 id="增加-router-meta-属性"><a href="#增加-router-meta-属性" class="headerlink" title="增加 router.meta 属性"></a>增加 router.meta 属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// routes 配置</span><br><span class="line">export default [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;/&apos;,</span><br><span class="line">    name: &apos;home&apos;,</span><br><span class="line">    component: Home,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      keepAlive: true // 需要被缓存</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: &apos;/:id&apos;,</span><br><span class="line">    name: &apos;edit&apos;,</span><br><span class="line">    component: Edit,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      keepAlive: false // 不需要被缓存</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive&gt;</span><br><span class="line">    &lt;router-view v-if=&quot;$route.meta.keepAlive&quot;&gt;</span><br><span class="line">        &lt;!-- 这里是会被缓存的视图组件，比如 Home！ --&gt;</span><br><span class="line">    &lt;/router-view&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;router-view v-if=&quot;!$route.meta.keepAlive&quot;&gt;</span><br><span class="line">    &lt;!-- 这里是不被缓存的视图组件，比如 Edit！ --&gt;</span><br><span class="line">&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="使用-router-meta-拓展"><a href="#使用-router-meta-拓展" class="headerlink" title="使用 router.meta 拓展"></a>使用 router.meta 拓展</h2><p>假设这里有 3 个路由： A、B、C。  </p>
+<p><strong>需求：</strong></p>
+<ol>
+<li>默认显示 A</li>
+<li>B 跳到 A，A 不刷新</li>
+<li>C 跳到 A，A 刷新</li>
+</ol>
+<p>在 A 路由里面设置 meta 属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">path: &apos;/&apos;,</span><br><span class="line">name: &apos;A&apos;,</span><br><span class="line">component: A,</span><br><span class="line">meta: &#123;</span><br><span class="line">    keepAlive: true // 需要被缓存</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在 B 组件里面设置 beforeRouteLeave：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    beforeRouteLeave(to, from, next) &#123;</span><br><span class="line">        // 设置下一个路由的 meta</span><br><span class="line">        to.meta.keepAlive = true; // 让 A 缓存，即不刷新</span><br><span class="line">        next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在 C 组件里面设置 beforeRouteLeave：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;&#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    beforeRouteLeave(to, from, next) &#123;</span><br><span class="line">        // 设置下一个路由的 meta</span><br><span class="line">        to.meta.keepAlive = false; // 让 A 不缓存，即刷新</span><br><span class="line">        next();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这样便能实现 B 回到 A，A 不刷新；而 C 回到 A 则刷新。</p>
+<h2 id="keep-alive-生命周期钩子函数"><a href="#keep-alive-生命周期钩子函数" class="headerlink" title="keep-alive 生命周期钩子函数"></a>keep-alive 生命周期钩子函数</h2><p>当引入keep-alive 的时候，页面第一次进入，钩子的触发顺序created-&gt; mounted-&gt; activated，退出时触发deactivated。当再次进入（前进或者后退）时，只触发activated。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>路由大法不错，不需要关心哪个页面跳转过来的，只要 router.go(-1) 就能回去，不需要额外参数。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.jianshu.com/p/0b0222954483" target="_blank" rel="noopener">vue-router 之 keep-alive</a></p>
 
       
     </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">--本文结束<i class="fa fa-paw"></i>感谢您的阅读--</div>
+    
+</div>
+      
+    </div>
+    
 
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/keep-alive/" rel="tag"><i class="fa fa-tag"></i> keep-alive</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/10/vue中的修饰符sync/" rel="next" title="vue中的修饰符sync">
+                <i class="fa fa-chevron-left"></i> vue中的修饰符sync
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/15/flatten（扁平化）数数组/" rel="prev" title="flatten（扁平化）数组">
+                flatten（扁平化）数组 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -351,6 +520,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzQ5NS8xMDA1MQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -371,8 +549,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -457,6 +644,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keep-alive-简介"><span class="nav-number">1.</span> <span class="nav-text">keep-alive 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#props"><span class="nav-number">1.1.</span> <span class="nav-text">props</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇见-vue-router"><span class="nav-number">2.</span> <span class="nav-text">遇见 vue-router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-include-exclude"><span class="nav-number">2.1.</span> <span class="nav-text">使用 include/exclude</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加-router-meta-属性"><span class="nav-number">2.2.</span> <span class="nav-text">增加 router.meta 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-router-meta-拓展"><span class="nav-number">3.</span> <span class="nav-text">使用 router.meta 拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keep-alive-生命周期钩子函数"><span class="nav-number">4.</span> <span class="nav-text">keep-alive 生命周期钩子函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -598,6 +801,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -626,6 +833,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
