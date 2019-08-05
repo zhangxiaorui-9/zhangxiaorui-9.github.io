@@ -29,7 +29,7 @@ $ git commit -m "add 3 files."
 2. 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。**注意**，使用git diff查看修改内容是在add之前查看。
 
 #### 版本回退
-1. 首先，可以用git log查看提交的历史记录。![image]((https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
+1. 首先，可以用git log查看提交的历史记录。![image](https://img-blog.csdnimg.cn/20190805094438308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1poYW5neGlhb3J1aV85,size_16,color_FFFFFF,t_70)
 
 上图可以看出，共提交过两次。在Git中，用HEAD表示当前版本，也就是最新的提交。上一个版本就是HEAD\^，上上一个版本就是HEAD\^\^，当然往上100个版本写100个\^比较容易数不过来，所以写成HEAD~100。
 2. 使用git reset --hard HEAD\^命令，回退到上个版本。
