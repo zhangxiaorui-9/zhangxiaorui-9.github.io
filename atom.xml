@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kursaal.vip/"/>
-  <updated>2019-08-06T06:53:22.470Z</updated>
+  <updated>2019-08-08T05:40:36.775Z</updated>
   <id>http://kursaal.vip/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>取数组中最大值</title>
+    <link href="http://kursaal.vip/2019/08/08/%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    <id>http://kursaal.vip/2019/08/08/取数组中最大值/</id>
+    <published>2019-08-08T05:22:35.000Z</published>
+    <updated>2019-08-08T05:40:36.775Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-8.jpg" alt="image"><br><a id="more"></a><br>首先，定义一个数组：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const arr = [2, 6, 4, 20, -3, 8]</span><br></pre></td></tr></table></figure><h4 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.max = function() &#123;</span><br><span class="line">  let max = this[0]</span><br><span class="line">  this.forEach(item =&gt; &#123;</span><br><span class="line">    max = max &gt;= item ? max : item</span><br><span class="line">  &#125;)</span><br><span class="line">  return max</span><br><span class="line">&#125;</span><br><span class="line">const max01 = arr.max()</span><br><span class="line">console.log(max01)</span><br></pre></td></tr></table></figure><h4 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const max02 = arr.sort((a, b) =&gt; &#123;</span><br><span class="line">  return b-a // a-b是从小到大，b-a是从大到小</span><br><span class="line">&#125;)[0]</span><br><span class="line">console.log(max02)</span><br></pre></td></tr></table></figure><h4 id="第三种方法"><a href="#第三种方法" class="headerlink" title="第三种方法"></a>第三种方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const max03 = Math.max.apply(null, arr)</span><br><span class="line">console.log(max03)</span><br></pre></td></tr></table></figure><h4 id="第四种方法"><a href="#第四种方法" class="headerlink" title="第四种方法"></a>第四种方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const max04 = Math.max(...arr)</span><br><span class="line">console.log(max04)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://wonderfulengineering.com/wp-content/uploads/2014/04/code-wallpaper-8.jpg&quot; alt=&quot;image&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javaScript" scheme="http://kursaal.vip/categories/javaScript/"/>
+    
+    
+      <category term="最大值" scheme="http://kursaal.vip/tags/%E6%9C%80%E5%A4%A7%E5%80%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>面向对象与继承</title>
@@ -461,32 +483,6 @@
       <category term="arguments" scheme="http://kursaal.vip/tags/arguments/"/>
     
       <category term="函数重载" scheme="http://kursaal.vip/tags/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javaScript中this的用法</title>
-    <link href="http://kursaal.vip/2017/03/11/this%E7%9A%84%E7%94%A8%E6%B3%95/"/>
-    <id>http://kursaal.vip/2017/03/11/this的用法/</id>
-    <published>2017-03-11T07:22:16.000Z</published>
-    <updated>2019-03-05T07:30:06.040Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote><p>this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。<a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="noopener">原文链接</a></p></blockquote><a id="more"></a><h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>this是Javascript语言的一个关键字。</p><p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。比如，</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 1;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure><p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，==调用函数的那个对象。==</p><hr><p>下面分四种情况，详细讨论this的用法。  </p><h5 id="情况一：纯粹的函数调用"><a href="#情况一：纯粹的函数调用" class="headerlink" title="情况一：纯粹的函数调用"></a>情况一：纯粹的函数调用</h5><p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。</p><p>请看下面这段代码，它的运行结果是1。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 1;</span><br><span class="line"></span><br><span class="line">　　　　alert(this.x);</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　test(); // 1</span><br></pre></td></tr></table></figure></p><p>为了证明this就是全局对象，我对代码做一些改变：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　var x = 1;</span><br><span class="line"></span><br><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　alert(this.x);</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　test(); // 1</span><br></pre></td></tr></table></figure></p><p>运行结果还是1。再变一下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">　var x = 1;</span><br><span class="line"></span><br><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 0;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　test();</span><br><span class="line"></span><br><span class="line">　　alert(x); //0</span><br></pre></td></tr></table></figure><h5 id="情况二：作为对象方法的调用"><a href="#情况二：作为对象方法的调用" class="headerlink" title="情况二：作为对象方法的调用"></a>情况二：作为对象方法的调用</h5><p>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　alert(this.x);</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　var o = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">　　o.x = 1;</span><br><span class="line"></span><br><span class="line">　　o.m = test;</span><br><span class="line"></span><br><span class="line">　　o.m(); // 1</span><br></pre></td></tr></table></figure><h5 id="情况三-：作为构造函数调用"><a href="#情况三-：作为构造函数调用" class="headerlink" title="情况三 ：作为构造函数调用"></a>情况三 ：作为构造函数调用</h5><p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 1;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　var o = new test();</span><br><span class="line"></span><br><span class="line">　　alert(o.x); // 1</span><br></pre></td></tr></table></figure></p><p>运行结果为1。为了表明这时this不是全局对象，我对代码做一些改变：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">　　var x = 2;</span><br><span class="line"></span><br><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　this.x = 1;</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　var o = new test();</span><br><span class="line"></span><br><span class="line">　　alert(x); //2</span><br></pre></td></tr></table></figure></p><p>运行结果为2，表明全局变量x的值根本没变。  </p><h5 id="情况四：-apply调用"><a href="#情况四：-apply调用" class="headerlink" title="情况四： apply调用"></a>情况四： apply调用</h5><p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">　　var x = 0;</span><br><span class="line"></span><br><span class="line">　　function test()&#123;</span><br><span class="line"></span><br><span class="line">　　　　alert(this.x);</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　var o=&#123;&#125;;</span><br><span class="line"></span><br><span class="line">　　o.x = 1;</span><br><span class="line"></span><br><span class="line">　　o.m = test;</span><br><span class="line"></span><br><span class="line">　　o.m.apply(); //0</span><br></pre></td></tr></table></figure><p>apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为0，证明this指的是全局对象。</p><p>如果把最后一行代码修改为 : </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　o.m.apply(o); //1</span><br></pre></td></tr></table></figure><p>运行结果就变成了1，证明了这时this代表的是对象o。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;this是JavaScript中一个比较难理解的点，很多新人会很迷惑。本文非原创，是阮一峰老师个人博客里的，个人感觉理解起来会很容易。拿来与大家分享。&lt;a href=&quot;http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="javaScript" scheme="http://kursaal.vip/categories/javaScript/"/>
-    
-    
-      <category term="this" scheme="http://kursaal.vip/tags/this/"/>
-    
-      <category term="js" scheme="http://kursaal.vip/tags/js/"/>
     
   </entry>
   

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[取数组中最大值]]></title>
+    <url>%2F2019%2F08%2F08%2F%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9C%80%E5%A4%A7%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[首先，定义一个数组： 1const arr = [2, 6, 4, 20, -3, 8] 第一种方法123456789Array.prototype.max = function() &#123; let max = this[0] this.forEach(item =&gt; &#123; max = max &gt;= item ? max : item &#125;) return max&#125;const max01 = arr.max()console.log(max01) 第二种方法1234const max02 = arr.sort((a, b) =&gt; &#123; return b-a // a-b是从小到大，b-a是从大到小&#125;)[0]console.log(max02) 第三种方法12const max03 = Math.max.apply(null, arr)console.log(max03) 第四种方法12const max04 = Math.max(...arr)console.log(max04)]]></content>
+      <categories>
+        <category>javaScript</category>
+      </categories>
+      <tags>
+        <tag>最大值</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[面向对象与继承]]></title>
     <url>%2F2019%2F01%2F06%2F%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%BB%A7%E6%89%BF%2F</url>
     <content type="text"><![CDATA[类与实例首先，通过两种方式来声明一个类：第一种，构造函数的方式 123function Animal1(name) &#123; this.name = name&#125; 第二种，ES6中的class声明 12345class Animal2 &#123; constructor(name) &#123; this.name = name &#125;&#125; 两种方式生成实例的方式是一样的 12var animal = new Animal1(&apos;dog&apos;)var animal2 = new Animal2(&apos;bear&apos;) 实现继承第一种：借助构造函数实现继承1234567function Parent1() &#123; this.name = &apos;parent1&apos;&#125;function Child1() &#123; Parent1.call(this) this.age = 14&#125; 这种继承的方式只能继承构造函数内部的属性，缺点是不能继承构造函数原型对象上的属性，如下123Parent1.prototype.say = function() &#123; console.log(&apos;hello&apos;)&#125; 这时候，say方法Child1是继承不到的 第二种：借助原型链实现继承12345678function Parent2() &#123; this.name = &apos;parent2&apos;&#125;function Child2() &#123; this.age = 16&#125;Child2.prototype = new Parent2()var child = new Child2() 这个方法中，child的属性方法先有构造函数Child2内部的属性age，然后我们知道每个对象都有一个_ proto _ 属性，指向构造函数的prototype，这时child._ proto _ === Child2.prototype，然后就继承到Parent2上的属性及方法了 这个方法也有个缺点，如果Parent2中有个属性值是引用类型的，如下1234function Parent2() &#123; this.name = &apos;parent2&apos; this.color = [&apos;red&apos;, &apos;green&apos;]&#125; 这时候我们生成两个child实例123var child1 = new Child2()var child2 = new Child2()child1.color.push(&apos;blue&apos;) 这时候child2.color也会有’blue’，这肯定不是我们想要的结果。这时因为child1._ proto _ 和child2._ proto _都指向Child2.prototype，而Child2.prototype的值是一个实例对象 第三种：组合方式12345678function Parent3() &#123; this.name = &apos;parent3&apos;&#125;function Child3() &#123; Parent3.call(this) this.age = 16&#125;Child3.prototype = new Parent3() 这种方式可以实现构造函数体内的属性以及原型对象上的属性与方法，但有个缺点，就是我们新生成一个child实例时，Parent3构造函数执行了两次，这样是没必要的，所以继续优化一下，如下：12345678function Parent4() &#123; this.name = &apos;parent4&apos;&#125;function Child4() &#123; Parent3.call(this) this.age = 16&#125;Child4.prototype = Parent4.prototype 这种方式也有一个缺点，就是新生成的child实例的constructor会指向Parent4而不是Child4，那继续来优化一下：123456789function Parent5() &#123; this.name = &apos;parent5&apos;&#125;function Child5() &#123; Parent3.call(this) this.age = 16&#125;Child5.prototype = Object.create(Parent5.prototype)Child5.prototype.constructor = Child5 至此，继承就完美实现了。有问题，欢迎指正！]]></content>
