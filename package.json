@@ -23,6 +23,6 @@
     "hexo-server": "^0.2.0",
     "hexo-tag-cloud": "^2.0.9",
     "hexo-wordcount": "^3.0.2",
-    "node-sass": "^4.7.2"
+    "node-sass": "^7.0.0"
   }
 }
